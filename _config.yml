@@ -16,8 +16,8 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko"
-title                    : "테스트 1"
-title_separator          : " "
+title                    : "Mk's Blog"
+title_separator          : "_"
 name                     : "Moonsoo Kim"
 description              : "An amazing website."
 url                      : "https://Moons08.github.io"
@@ -100,7 +100,7 @@ analytics:
 author:
   name             : "Moonsoo Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
+  bio              : "Jr."
   location         : "Seongnam, Korea"
   email            : "mskk0805@gmail.com"
   uri              :
