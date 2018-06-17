@@ -4,10 +4,13 @@ date: 2018-06-17
 tags: Hadoop
 category: programming
 ---
-# Hadoop
-자바 기반의 오픈소스 프레임워크
+빅-데이터 세상에서, 데이터의 규모가 조금만 커져도 컴퓨터 한대로는 단순히 데이터를 불러오는 것조차 힘겨워지는 경우가 생긴다. 이를 해결하기 위해 **Hadoop** 을 이용하는 경우가 많아졌다. 데이터 엔지니어의 롤을 가진 분들이 주로 활용하는 툴.
 
-## 하둡을 왜 쓰는가?
+# Hadoop
+High-Availability Distributed Object-Oriented Platform
+- 분산 처리를 지원하는 자바 기반의 프레임워크
+
+## 하둡의 장점
 하나의 컴퓨터에서 처리할 수 없는 대용량의 데이터를 나누어 처리하기 위해 사용
 
 - Computing power : 다수 CPU, RAM 이용 가능
@@ -29,6 +32,9 @@ category: programming
 ![png](/assets/img/HadoopStack.png)
 
 위 그림은 간략한 하둡 생태계, 실제로는 훨씬 많다. [Image Source](http://blog.newtechways.com/2017/10/apache-hadoop-ecosystem.html)
+
+*하둡의 이름과 로고인 노란 코끼리는 하둡 개발자 아이의 장난감에서 따왔다고 한다.*
+
 
 ### HIVE
 하둡 시스템의 데이터베이스
