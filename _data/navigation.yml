@@ -1,6 +1,6 @@
 main:
   - title: "Archive"
-    url: /month-archive/
+    url: /archive/
   - title: "tag"
     url: /tags/
   - title: "Category"
