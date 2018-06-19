@@ -3,6 +3,7 @@ title: 회귀 - (1)
 date: 2018-06-19
 tags: Regression
 category: Data Science
+mathjax: true
 ---
 회귀(regression). 14년도에 계량 경제학 수업을 들을 때 처음 봤지만, 아직도 어렵다. 그땐 뭘 알고 분석을 한 건지 의문이다.
 
