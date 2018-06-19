@@ -92,9 +92,9 @@ $$\dfrac{d \text{RSS}}{d w} = -2 X^T y + 2 X^TX w$$
 
 $$X^TX w^{\ast} = X^T y$$
 
-원하던 벡터 w를 구할 수 있다.
+원하던 벡터 $w$를 구할 수 있다.
 
-$$w = (X^TX)^{-1}X^Ty$$
+$$w^{\ast} = (X^TX)^{-1}X^Ty$$
 
 그리고 다음과 같은 식을 정규 방정식(normal equation)이라 한다.
 
