@@ -1,5 +1,5 @@
 ---
-title: coding quiz - ginortS
+title: hackerrank - ginortS
 date: 2018-07-20
 tags: algorithm
 category: programming
