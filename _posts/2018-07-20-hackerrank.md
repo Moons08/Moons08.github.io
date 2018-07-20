@@ -4,7 +4,7 @@ date: 2018-07-20
 tags: algorithm
 category: programming
 ---
-알고리즘을 많이 풀어보지 않아서 해커랭크에서 쉬운 문제에도 고전하는 경우가 많은데, 난이도 medium임에도 불구하고 금방 풀어서 기념으로 기록
+해커랭크에서 쉬운 문제에도 고전하는 경우가 종종 있는데, 자주자주 이렇게 푸는 습관을 가져야겠다.
 
 ## task
 You are given a string which contains alphanumeric characters only
