@@ -1,7 +1,7 @@
 ---
-title: 오늘의 에러
+title: 오늘의 에러 - 180723 
 date: 2018-07-23
-tags: python, Error
+tags: python Error
 category: programming
 ---
 
@@ -14,7 +14,6 @@ category: programming
 ## 내가 시도했던 코드
 
 ```bash
-
 $ python test.py /home/mk/documents/dev/test, py, txt
 FileNotFoundError: [Errno 2] No such file or directory: '/home/mk/documents/dev/test,'
 ```
