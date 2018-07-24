@@ -1,7 +1,7 @@
 ---
 title: 회귀 분석 - (3) Partial Regression
 date: 2018-07-21
-tags: Regrssion
+tags: Regression
 category: Data Science
 mathjax: true
 ---
