@@ -40,7 +40,7 @@ def show_graph(graph_def, max_const_size=32):
           function load()
 
 
-        <!-- <title> {{ 이 부분에 넣으면 된다. }} </title> -->
+        <!-- <title>  </title> -->
 
 
         </script>
@@ -56,7 +56,7 @@ def show_graph(graph_def, max_const_size=32):
     display(HTML(iframe))
 ```
 
-다만 중간의 빈 부분에 주석 처리를 지우고 두개의 중괄호 사이에 밑의 코드를 붙여 넣자.
+다만 중간의 빈 부분에 주석 처리를 지우고 **{{ 두 개의 중괄호 }}** 사이에 밑의 코드를 붙여 넣자.
 
 ```
   document.getElementById("{id}").pbtxt = {data};
