@@ -51,6 +51,8 @@ def show_graph(graph_def, max_const_size=32):
 ```
 
 실행을 위한 예시 코드
+
+
 ```python
 def relu(X):
     w_shape = (int(X.get_shape()[1]), 1)
@@ -67,6 +69,8 @@ output = tf.add_n(relus, name="output")
 ```
 
 실행
+
+
 ```python
 show_graph(tf.get_default_graph().as_graph_def())
 ```
