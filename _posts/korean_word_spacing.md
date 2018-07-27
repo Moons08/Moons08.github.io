@@ -1,0 +1,85 @@
+# 한국어 띄어쓰기 모델 (Korean word spacing model)
+## 문제
+- (띄어쓰기가) 올바른 문장과 틀린 문장이 섞여 있음
+- 틀린 문장의 비율이 훨씬 많음(으로 예상됨)
+- 띄어쓰기를 '덜' 해서 문제 (따라서 길이에 비해 띄어쓰기가 많다면 올바를 확률이 높음)
+- 미등록단어가 무지하게 많음(사전 기반일 경우 난관 예상, 사용 시 사전 추가 자동화 필요)
+- 글자의 앞글자와 뒷글자를 보고 해당 글자 뒤에 띄어쓰기를 해야 할 지 예측하는 **분류 문제**
+
+## 트레이닝 셋 구성
+띄어쓰기를 덜해서 문제가 생긴다는 것에 착안하여 전체 데이터 중 문장의 길이 대비 띄어쓰기의 갯수가 많은 상위 X% 데이터를(기준점은 수동으로 체크) 분석 데이터로 사용합니다. 여기에 띄어쓰기가 0개인 데이터를 추가합니다. 이 데이터를 통해 한 개의 단어로 이루어진 단답 문장을 학습할 수 있습니다.
+
+
+분석 데이터 중 10%를 성능 평가용 Test set으로, 나머지를 학습용 Train set으로 사용합니다. 성능 평가는 띄어쓰기를 없앤 set으로 띄어쓰기를 예측한 값과 원본을 비교하여 confusion matrix를 만듭니다.
+
+
+
+## 모델링
+띄어쓰기에 대한 접근은 여러가지가 있는 것으로 알고 있습니다. 단어장을 만들며 직접 counting을 하거나, Convolutional Neural Network에서 사용하는 Conv1D layer를 사용하여 N-gram을 자동화할 수도 있습니다.
+
+저는 soyspacing에서 제안한 카운팅 기반의 방법이 효과적으로 띄어쓰기를 하는데 적합하다고 생각합니다. 해당 모델에서는 각 글자 뒤에 띄어쓰기가 나올 확률을 구해야 하기 때문에, 글자 수 만큼 y 값(종속 변수)이 존재합니다.
+
+아주 간단한 코드로 표현하자면 다음과 같습니다.
+
+```python
+>>> from collections import defaultdict
+>>> from pprint import pprint
+>>>
+>>> S = '야자 안 했어. 밥 먹자 밥'
+>>> S += ' '
+>>>
+>>> C = defaultdict(lambda: defaultdict(int))
+>>> scope = 0
+>>>
+>>> for idx, val in enumerate(S):
+...     chunk = S[idx-scope:idx+scope+1]
+...     if chunk == ' ':
+...         pass
+...     if chunk not in C:
+...         C[chunk][0] = 0
+...         C[chunk][1] = 0
+...     try:
+...         if S[S.index(chunk, idx-scope) + scope + 1] == ' ':
+...             C[chunk][1] += 1
+...         else:
+...             C[chunk][0] += 1
+...     except:
+...         pass
+...
+>>> pprint(C)
+defaultdict(<function <lambda> at 0x7f844c3429d8>,
+            {' ': defaultdict(<class 'int'>, {0: 5, 1: 0}),
+             '.': defaultdict(<class 'int'>, {0: 0, 1: 1}),
+             '먹': defaultdict(<class 'int'>, {0: 1, 1: 0}),
+             '밥': defaultdict(<class 'int'>, {0: 0, 1: 2}),
+             '안': defaultdict(<class 'int'>, {0: 0, 1: 1}),
+             '야': defaultdict(<class 'int'>, {0: 1, 1: 0}),
+             '어': defaultdict(<class 'int'>, {0: 1, 1: 0}),
+             '자': defaultdict(<class 'int'>, {0: 0, 1: 2}),
+             '했': defaultdict(<class 'int'>, {0: 1, 1: 0})})
+```
+
+여기에서 slicing을 조절하여 문장을 L, C, R로 구분 (L: 해당 글자+앞 부분, C: 전체 스코프, R: 해당 글자+뒷부분)해서 각각 뒤에 띄어쓰기가 오는지에 대한 여부를 카운트합니다.
+
+
+띄어쓰기 점수는 `띄어쓰기가 나온 횟수 / (띄어쓰기가 나온 횟수 + 띄어쓰기가 안 나온 횟수)` 로 계산하면 0과 1사이의 값이 나오게 되는데, threshold를 조절하여 적정한 값을 찾도록 합니다. threshold 값을 통해 precision과 recall 중 어느 쪽에 비중을 둘지 결정할 수 있습니다.
+
+
+soyspacing에서는 L, C, R의 띄어쓰기 점수에 따라 몇 가지 규칙을 두어 해당 단어 위치에 대한 최종 띄어쓰기 점수를 결정합니다. 여기서 조금 제 생각을 덧붙이자면, 판별의 사용할 문자열 길이(scope)와 함께 L, C, R 점수에 대한 결과 값을 신경망을 이용하여 학습시키면 더 나은 결과가 나올 수 있지 않을까 합니다.
+
+
+그러면 신경망은
+1. 적절한 scope 길이에 대한 학습을 하여, 주어진 count 방법에 따라 L, C, R 점수를 계산한 뒤,
+1. 오차를 최소화하는 L, C, R 간의 적절한 최적 관계를 만들기 위해 학습할 것입니다.
+
+따라서 최적 scope 길이와 함께 L, C, R 간의 관계를 규칙 기반이 아닌 방식으로 찾게 될 수 있을 것 같습니다.
+
+
+## 한계
+학습 데이터의 띄어쓰기가 올바르지 않을 경우, 학습이 잘못된 방향으로 진행될 것입니다. 또한, 띄어쓰기 모델의 존재 이유는 더 좋은 분석 결과를 위한 전처리인데, 신경망까지 사용하게 된다면 비용이 과다하게 드는 것은 아닌가 하는 생각이 듭니다.
+
+---
+### references
+- github.com/lovit/soyspacing
+- freesearch.pe.kr/archives/4759
+- kiise.or.kr/e_journal/2015/1/JOK/pdf/08.pdf
