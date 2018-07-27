@@ -69,6 +69,7 @@ output = tf.add_n(relus, name="output")
 ```python
 show_graph(tf.get_default_graph().as_graph_def())
 ```
+
 ![img](/assets/img/tensorboard_on_jupyter.png)
 
 interaction까지 동작하는 tensorboard가 Jupyter notebook 환경에 띄워진다. thank you stackoverflow!
