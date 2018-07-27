@@ -38,7 +38,11 @@ def show_graph(graph_def, max_const_size=32):
         <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
         <script>
           function load() {{
-            document.getElementById("{id}").pbtxt = {data};
+
+
+            이 부분에 넣으면 된다.
+
+
           }}
         </script>
         <link rel="import" href="https://tensorboard.appspot.com/tf-graph-basic.build.html" onload=load()>
@@ -52,6 +56,10 @@ def show_graph(graph_def, max_const_size=32):
     """.format(code.replace('"', '&quot;'))
     display(HTML(iframe))
 ```
+
+다만 중간 부분에
+`document.getElementById("{id}").pbtxt = {data};
+` 를 붙여 넣자
 
 실행을 위한 예시 코드
 
