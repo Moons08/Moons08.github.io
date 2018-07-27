@@ -40,7 +40,7 @@ def show_graph(graph_def, max_const_size=32):
           function load()
 
 
-            # 이 부분에 넣으면 된다.
+        <!-- <title> {{ 이 부분에 넣으면 된다. }} </title> -->
 
 
         </script>
@@ -56,13 +56,12 @@ def show_graph(graph_def, max_const_size=32):
     display(HTML(iframe))
 ```
 
-다만 중간의 빈 부분에
+다만 중간의 빈 부분에 주석 처리를 지우고 두개의 중괄호 사이에 밑의 코드를 붙여 넣자.
 
-**{{
-  document.getElementById("{id}").pbtxt = {data}
-  }};**
+```
+  document.getElementById("{id}").pbtxt = {data};
+```
 
- 를 붙여 넣자.
 - 이렇게 귀찮게 떼어놓은 이유는, 지킬 블로그에서 페이지를 build 할 때 코드 블럭 안의 html 코드를 지가 처리해야 하는 걸로 오해해서.... 포스팅이 안 올라가기 때문이다. 예상 못한 난관이었다.
 
 
