@@ -4,6 +4,7 @@ date: 2018-07-27
 tags: deeplearning
 category: programming
 ---
+
 데이터 분석을 공부할 때는 주로 Jupyter notebook을 이용하게 된다. 최근에 다시 tensorflow를 복습하게 되어서 쓰다 보니, 간단하게 주피터 내에서 텐서보드를 띄우고 싶었다. 예전에 찾았던 것 같은데, 앞으로 또 찾을 일을 대비해 여기에 기록한다.
 
 
