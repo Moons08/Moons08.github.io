@@ -3,5 +3,7 @@ main:
     url: /archive/
   - title: "tag"
     url: /tags/
-  - title: "Category"
-    url: /categories/
+  - title: "Categories"
+    url: /categories/list
+  - title: "About"
+    url: /about/
