@@ -1,5 +1,5 @@
 ---
-title: [Python] Text Alignment - 문자열 정렬
+title: Text Alignment - 문자열 정렬
 date: 2018-08-02
 tags: python
 category: programming
