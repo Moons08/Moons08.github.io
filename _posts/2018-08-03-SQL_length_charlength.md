@@ -1,5 +1,5 @@
 ---
-title: [SQL] LENGTH vs CHAR_LENGTH
+title: SQL] LENGTH vs CHAR_LENGTH
 date: 2018-08-03
 tags: SQL
 category: programming
