@@ -17,7 +17,7 @@ category: programming
 
 아래는 그런 상황의 예시.
 
-```SQL
+```sql
 select length(\_utf8 '€'), char_length(\_utf8 '€')
 --> 3, 1
 ```
