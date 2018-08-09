@@ -1,7 +1,7 @@
 ---
 title: 오늘의 에러 - 180808
 date: 2018-08-08
-tags: Error
+tags: Error docker
 category: programming
 ---
 이번에도 경로(PATH) 문제였다.
