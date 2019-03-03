@@ -115,15 +115,17 @@ t2 = BashOperator(
     bash_command='sleep 5',
     dag=dag,
 )
-```
+
 templated_command = """
+{% raw %}
 {% for i in range(5) %}
     echo "{{ ds }}"
     echo "{{ macros.ds_add(ds, 7)}}"
     echo "{{ params.my_param }}"
 {% endfor %}
+{% endraw %}
 """
-```python
+
 t3 = BashOperator(
     task_id='templated',
     depends_on_past=False,
@@ -134,7 +136,7 @@ t3 = BashOperator(
 ```    
 Jinja template을 이용할 수 있습니다. 뒤에서 자세히 다루겠습니다.
 
-*jinja python 코드블록을 지킬에서 표현하기가 힘드네요. 테마가 문제인가*
+<!-- *jinja python 코드블록을 지킬에서 표현하기가 힘드네요. 테마가 문제인가* -->
 
 #### dependencies
 
