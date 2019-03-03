@@ -19,7 +19,6 @@ DAG와 Operator를 결합하여 Task Instance를 만들면 복잡한 Workflow를
 
 *아래는 좀 더 깊게 설명한 airflow 공식 문서를 조금 변형하여 가져왔습니다.*
 
-<br>
 
 ## DAGs
 
@@ -38,7 +37,7 @@ Airflow에서 DAG 또는 Directed Acyclic Graph(비 순환 그래프)는 실행�
 DAG는 Airflow의 `DAG_FOLDER`에있는 표준 Python 파일에 정의되어 있습니다. Airflow는 각 파일의 코드를 실행하여 DAG 개체를 동적으로 작성합니다. 원하는 수의 DAG를 가질 수 있으며 각 DAG는 임의의 수의 작업을 설명합니다. 일반적으로 DAG는 각각 하나의 논리적 workflow에 대응해야 합니다.
 
 
-#### Default Arguments
+### Default Arguments
 예제에서 봤던 그것입니다. 미리 dag에 전달할 *(최종적으로는 Operator들에게 전달될)* arguments들을 정의해 놓으면 편리하게 사용할 수 있습니다. 자주 쓰는 몇 가지만 설명하도록 하겠습니다. 전체 파라미터 설명은 [여기](https://airflow.apache.org/code.html#airflow.models.BaseOperator)에서 확인할 수 있습니다.
 
 ```python
@@ -60,7 +59,7 @@ op = DummyOperator(task_id='dummy', dag=dag)
 print(op.owner) # Airflow
 ```
 
-#### Scope
+### Scope
 
 에어플로우는 DAGfile 안의 모든 `DAG` 오브젝트들을 불러올 수 있습니다. 다만, 각 오브젝트들은 전역 변수`globals()`여야 합니다. 아래의 예에서 `dag_1`만 불려오게 될 것입니다.
 
@@ -94,11 +93,11 @@ Operator는 대개 (항상 그런 것은 아니지만) 독립적으로 동작합
 
 위의 나열된 것 보다 **훨씬 많은** Operator들이 존재합니다. 이거 있나? 싶으면 보통 있습니다. 다만 contrib 디렉토리에 있는 Operator들은 community에 의해 작성된 것이므로 완벽하지 않을 수 있습니다.
 
-#### Tasks
+### Tasks
 
 Operator가 인스턴스화되면 이를 `Task`라고 합니다. 매개 변수화 된 작업은 DAG의 노드가 됩니다.
 
-#### Task Instance
+### Task Instance
 
 Task Instance는 Task의 특정 실행을 나타내며 (일반적으로 여러 번 실행될 것이기 때문에) dag, task, 특정 시점의 조합으로 구분할 수 있습니다. Task Instance는 “running”, “success”, “failed”, “skipped”, “up for retry” 등의 표시 상태를 가집니다.
 

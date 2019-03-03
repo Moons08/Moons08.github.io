@@ -5,13 +5,12 @@ tags: airflow
 category: programming
 ---
 
-# SlackOperator
-
-작업 상황, 결과 등을 슬랙으로 전달하는 데 이용할 수 있는 Operator 입니다.
-(Mattermost도 됩니다.)
+작업 상황, 결과 등을 슬랙으로 전달하는 데 이용할 수 있는 Operator 입니다. (Mattermost도 됩니다.)
 
 슬랙 토큰은 [여기](https://api.slack.com/custom-integrations/legacy-tokens)에서 생성하시면 됩니다. 슬랙 알림을 사용할 workspace를 선택해주세요.
-예제를 실행하기 전 다음 명령어를 cmd 창에서 실행해 주세요. `pip install apache-airflow[slcak]`
+
+예제를 실행하기 전 다음 명령어를 cmd 창에서 실행해 주세요.
+**`pip install apache-airflow[slcak]`**
 
 ```python
 from datetime import timedelta
@@ -55,9 +54,9 @@ airflow test test_slak send_slack 0 # 0만 입력하면 오늘 0시 0분으로 �
 
 <br>
 
-### 한걸음 더
+## 한걸음 더
 
-#### 접속정보 저장
+### 접속정보 저장
 
 매번 슬랙 토큰을 스크립트에 입력할 수도 있지만, webserver에 저장해두고 불러와서 사용할 수 있습니다.
 
@@ -68,7 +67,7 @@ http://localhost:8080/admin/connection/ 로 접속해서, `create`를 눌러봅�
 Conn Id는 dag 스크립트에서 불러올 이름이 되고, Password에 Slack Token을 입력해두시면 됩니다.
 *여기서 Login 항목은 사실 없어도 됩니다.*
 
-#### 알림 함수 설정하기
+### 알림 함수 설정하기
 
 알림 하나 할 때마다 Operator를 만들 수는 없습니다. callback을 이용하면 편리합니다.
 방금 저장한 접속 정보를 이용해서 클래스로 만들어 사용합시다.
@@ -141,22 +140,24 @@ t1 = BashOperator(
 )
 ```
 print_date 작업이 성공하면 다음과 같이 만들어둔 slack_fail_alert가 동작할 겁니다.
+
 *실제 사용할때는 `on_failure_callback`에 적용하면 됩니다.*
 
 <br>
 
 ![img](/assets/img/airflow/slack03.png)
-
 Log Url로 들어가면 작업 로그를 확인할 수 있습니다.
+
 *airflow test 명령어로는 slack 메세지는 전송되지만 log가 생성되지 않습니다.*
 
 ![img](/assets/img/airflow/slack04.png)
 
 <br>
 
-#### callback 함수의 context
+### callback 함수의 context
 
 콜백 함수에는 각 테스크의 상태정보가 dict타입으로 전달됩니다.
+
 context의 인자들은 `airflow/models/__init__.py` 의 `get_template_context`에서 확인할 수 있습니다.
 
 ```python
@@ -202,8 +203,11 @@ return {
 ```
 
 각 task와 task_instance의 인자들을 알고 싶다면 다음 방법으로 확인!
-`vars(context.get('task'))`
-`vars(context.get('task_instance'))`
+
+```
+vars(context.get('task'))
+vars(context.get('task_instance'))
+```
 
 ---
 
