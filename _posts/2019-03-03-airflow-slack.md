@@ -10,7 +10,7 @@ category: programming
 슬랙 토큰은 [여기](https://api.slack.com/custom-integrations/legacy-tokens)에서 생성하시면 됩니다. 슬랙 알림을 사용할 workspace를 선택해주세요.
 
 예제를 실행하기 전 다음 명령어를 cmd 창에서 실행해 주세요.
-**`pip install apache-airflow[slcak]`**
+**`pip install apache-airflow[slack]`**
 
 ```python
 from datetime import timedelta
@@ -215,4 +215,4 @@ vars(context.get('task_instance'))
 
 ---
 
-여기에서는 간단한 메세지를 보내는 기능을 했지만, 슬랙 API를 활용하면 더 많은 것들을 할 수 있을 겁니다.
+여기에서는 간단한 메세지를 보내는 기능이지만, 슬랙 API를 활용하면 더 많은 것들을 할 수 있을 겁니다.
