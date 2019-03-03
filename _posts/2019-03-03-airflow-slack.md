@@ -49,6 +49,7 @@ airflow test test_slak send_slack 0 # 0만 입력하면 오늘 0시 0분으로 �
 ```
 
 ![img](/assets/img/airflow/slack.png)
+
 잘 오네요!
 토큰 생성하고 바로 실행하면 요청을 처리하지 못할 수 있습니다. 잠시 기다리시면 됩니다.
 
@@ -64,8 +65,10 @@ http://localhost:8080/admin/connection/ 로 접속해서, `create`를 눌러봅�
 
 ![img](/assets/img/airflow/slack2.png)
 
-Conn Id는 dag 스크립트에서 불러올 이름이 되고, Password에 Slack Token을 입력해두시면 됩니다.
 *여기서 Login 항목은 사실 없어도 됩니다.*
+
+Conn Id는 dag 스크립트에서 불러올 이름이 되고, Password에 Slack Token을 입력해두시면 됩니다.
+
 
 ### 알림 함수 설정하기
 
@@ -139,18 +142,19 @@ t1 = BashOperator(
     dag=dag,
 )
 ```
-print_date 작업이 성공하면 다음과 같이 만들어둔 slack_fail_alert가 동작할 겁니다.
-
 *실제 사용할때는 `on_failure_callback`에 적용하면 됩니다.*
+
+print_date 작업이 성공하면 다음과 같이 만들어둔 slack_fail_alert가 동작할 겁니다.
 
 <br>
 
 ![img](/assets/img/airflow/slack03.png)
+
 Log Url로 들어가면 작업 로그를 확인할 수 있습니다.
 
-*airflow test 명령어로는 slack 메세지는 전송되지만 log가 생성되지 않습니다.*
-
 ![img](/assets/img/airflow/slack04.png)
+
+*airflow test 명령어로는 slack 메세지는 전송되지만 log가 생성되지 않습니다.*
 
 <br>
 
