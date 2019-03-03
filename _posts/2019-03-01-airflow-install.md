@@ -1,6 +1,6 @@
 ---
 title: [Airflow] 간단 설치
-date: 2019-03-01T09:00:00Z
+date: 2019-03-01 09:00:00 +0900
 tags: airflow
 category: programming
 ---
