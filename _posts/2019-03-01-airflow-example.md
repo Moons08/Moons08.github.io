@@ -16,13 +16,12 @@ airflow scheduler
 # scheduler를 실행하지 않아도 예제에 대한 test는 동작합니다.
 ```
 airflow webserver의 기본 포트는 8080입니다. 이제 http://localhost:8080 으로 접속해봅시다.
-
 접속하면 다음과 같은 페이지를 만날 수 있습니다.
 
 ![img](/assets/img/airflow/01.png)
 
 *만든게 없는데 뭐가 많습니다. `airflow.cfg`에서 얘들을 안보이게 할 수 있습니다.*
-<br>
+
 아직 우리의 `dags` 폴더에는 아무것도 없지만, 기본 예제들을 확인할 수 있습니다. 그럼 `tutorial`이란 이름의 DAG를 구경해봅시다. 클릭하면 기본적으로  Tree View가 보여지며, Graph View, Duration, ..., code 등등이 있는 것을 볼 수 있습니다. Code를 클릭하면 아래와 같은 DAG 파일의 파이썬 스크립트를 볼 수 있습니다.
 
 ### DAG Script
@@ -182,8 +181,6 @@ AIRFLOW_CTX_EXECUTION_DATE=2019-01-01T00:00:00+00:00
 정상적으로 실행된 것을 확인할 수 있습니다. 마지막 return code가 0이면 정상 종료입니다.
 
 *과거 시간으로는 동작하지만, 미래 시간대로 설정하면 동작하지 않습니다. airflow에서는 한국 시간보다 9시간 느린 UTC 시간 기준을 이용합니다.*
-
-<br>
 
 ### 실행
 test를 통해 dag 동작을 확인했다면 이제 스케쥴에 맞춰 실행을 시켜봅시다.
