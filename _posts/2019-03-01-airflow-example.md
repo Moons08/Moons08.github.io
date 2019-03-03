@@ -108,7 +108,7 @@ dag.doc_md = __doc__
 
 #### And so on
 
-```python
+```
 t2 = BashOperator(
     task_id='sleep',
     depends_on_past=False,
