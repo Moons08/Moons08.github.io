@@ -1,6 +1,6 @@
 ---
 title: \[Airflow] 간단한 예제로 시작해보기
-date: 2019-03-01
+date: 2019-03-01 19:00:00 -0600
 tags: airflow
 category: programming
 ---
