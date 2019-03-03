@@ -7,7 +7,9 @@ category: programming
 
 다양한 extra pakages가 존재하나, 일단 기본 airflow를 설치합시다.
 
-    $ pip install apache-airflow
+```sh
+$ pip install apache-airflow
+```
 
 ```
 RuntimeError: By default one of Airflow's dependencies installs a GPL dependency (unidecode).
