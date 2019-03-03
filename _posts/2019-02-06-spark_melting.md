@@ -1,5 +1,5 @@
 ---
-title: Spark
+title: Spark SQL - 로우 분리하기 
 date: 2019-02-06
 tags: Spark
 category: programming
