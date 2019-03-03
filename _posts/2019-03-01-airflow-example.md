@@ -108,28 +108,30 @@ dag.doc_md = __doc__
 
 #### And so on
 
-
-    t2 = BashOperator(
-        task_id='sleep',
-        depends_on_past=False,
-        bash_command='sleep 5',
-        dag=dag,
-    )
-    templated_command = """
-    {% for i in range(5) %}
-        echo "{{ ds }}"
-        echo "{{ macros.ds_add(ds, 7)}}"
-        echo "{{ params.my_param }}"
-    {% endfor %}
-    """
-
-    t3 = BashOperator(
-        task_id='templated',
-        depends_on_past=False,
-        bash_command=templated_command,
-        params={'my_param': 'Parameter I passed in'},
-        dag=dag,
-    )
+```python
+t2 = BashOperator(
+    task_id='sleep',
+    depends_on_past=False,
+    bash_command='sleep 5',
+    dag=dag,
+)
+```
+templated_command = """
+{% for i in range(5) %}
+    echo "{{ ds }}"
+    echo "{{ macros.ds_add(ds, 7)}}"
+    echo "{{ params.my_param }}"
+{% endfor %}
+"""
+```python
+t3 = BashOperator(
+    task_id='templated',
+    depends_on_past=False,
+    bash_command=templated_command,
+    params={'my_param': 'Parameter I passed in'},
+    dag=dag,
+)
+```    
 Jinja template을 이용할 수 있습니다. 뒤에서 자세히 다루겠습니다.
 
 *jinja python 코드블록을 지킬에서 표현하기가 힘드네요. 테마가 문제인가*
