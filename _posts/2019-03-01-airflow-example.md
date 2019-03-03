@@ -88,8 +88,6 @@ t1 = BashOperator(
 ```
 t1 변수에 할당한 `print_date`라는 위 task는 사용자의 bash에 date 명령을 내리는 작업을 수행합니다. task_id와 함께 방금 정의한 dag를 인자로 전달합니다.
 
-<br>
-
 #### Doc
 
 ```python
@@ -108,8 +106,6 @@ dag.doc_md = __doc__
 - task doc은 Graph View > Task 클릭 > Task Instance Details
 
 > 정기 작업이라면 문서화해놓는 것이 좋겠죠? 너 나 우리 모두를 위해...
-
-<br>
 
 #### And so on
 
@@ -137,8 +133,6 @@ t3 = BashOperator(
 )
 ```
 Jinja template을 이용할 수 있습니다. 뒤에서 자세히 다루겠습니다.
-
-<br>
 
 #### dependencies
 
@@ -209,12 +203,13 @@ web에서 DAG 상태를 On으로 바꿔주기만 하면 됩니다.
 - 오늘(3월 1일)치 작업은 3월 2일 0시 0분(UTC기준)에 수행될 것입니다.
 
 여기서 의문이 생기지 않나요? **오늘(3월 1일) 0시 0분은 이미 지났는데 왜 내일해?**
+
 <br>
-공식 문서는 다음과 같습니다.
+
+그 이유는 다음과 같습니다.
+
 >Note that if you run a DAG on a schedule_interval of one day, the run stamped 2016-01-01 will be trigger soon after 2016-01-01T23:59. In other words, **the job instance is started once the period it covers has ended.**
 
 **스케쥴(Run)은 해당 기간이 끝난 이후에 시작됩니다.** 일 단위로 수행되는 tutorial DAG의 기간은 `0시 0분부터 23시 59분까지`가 한 기간이고, 3월 1일이라는 기간이 아직 끝나지 않았기 때문에 작업이 진행되지 않는 것입니다.
-
-<br>
 
 :star: 아직 느낌이 잘 오지 않을 수 있습니다. 예제로 가볍게 훑어봤으니 dag와 task, execution_date 등 개념에 대해 파악해봅시다.
