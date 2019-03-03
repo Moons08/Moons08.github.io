@@ -1,5 +1,5 @@
 ---
-title: [Airflow] Basic Concept 알아보기
+title: \[Airflow] Basic Concept 알아보기
 date: 2019-03-02
 tags: airflow
 category: programming
