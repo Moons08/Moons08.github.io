@@ -21,7 +21,7 @@ templated_command = """
 ```
 airflow tutorial을 설명하며 위와 같은 코드를 봤습니다.
 
-굉장히 익숙치 않은 `{%` 기호입니다.
+굉장히 익숙치 않은 `\{%` 기호입니다.
 저 기호를 이용해서 jinja template 안의 if, for문 등을 제어할 수 있습니다.
 템플릿은 dag파일에 있어도 되고, task가 실행할 파일(sh, scala, py, ...) 안에 있어도 동작합니다.
 
