@@ -95,9 +95,10 @@ echo "{{ macros.ds_format(macros.ds_add(ds, days=2),'%Y-%m-%d', '%Y%m%d') }}"
 
 ```sh
 #result
+{% raw %}
 [2019-03-16 14:30:12,525] {bash_operator.py:119} INFO - Output:
 [2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - <DAG: test_jinja>, <Task(BashOperator): test>
-[2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - It would be passed, but jinja does not work like this {{ ds }}
+[2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - It would be passed, but jinja does not work {{ ds }}
 [2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - execution_date : 2019-03-16T00:00:00+00:00
 [2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - ds: 2019-03-16
 [2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - the day after tommorow with no dash format
@@ -108,7 +109,7 @@ echo "{{ macros.ds_format(macros.ds_add(ds, days=2),'%Y-%m-%d', '%Y%m%d') }}"
 [2019-03-16 14:30:12,527] {bash_operator.py:123} INFO - 2 2019-03-16
 [2019-03-16 14:30:12,528] {bash_operator.py:123} INFO - 20190316
 [2019-03-16 14:30:12,528] {bash_operator.py:127} INFO - Command exited with return code 0
-
+{% endraw %}
 ```
 
 
