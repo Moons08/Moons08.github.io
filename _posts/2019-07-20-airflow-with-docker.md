@@ -4,7 +4,8 @@ date: 2019-07-20
 tags: airflow docker
 category: programming
 ---
-airflow docker 설치  
+**airflow docker 설치**  
+
 docker를 이용하여 airflow를 로컬에 설치하던 것보다 더 쉽게 설치해보겠습니다.  
 에어플로우를 더 아름답게 쓰기 위해서는 executor, db 설정이 필요한데, 
 모든 환경설정이 그렇듯이 설치할 부품들이 늘어날수록 고통도 늘어납니다. 
@@ -39,7 +40,7 @@ $ tree
   
 그리고 도커 이미지를 도커허브에서 받아옵니다. 이건 시간이 조금 걸려요
 ```bash
-docker pull puckel/docker-airflow 
+$ docker pull puckel/docker-airflow 
 ```
 
 놀랍게도 준비가 끝났습니다. 이제 실행만하면 됩니다.
@@ -55,7 +56,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 
 기본 세팅으로 docker container의 dags를 로컬의 dags폴더에 마운트하게 됩니다.
 여기에서 이제 airflow 사용만 해보겠다! 하시면 dag 폴더에 들어가셔서 다양한 task들을 시도해보시면 됩니다. 
-로컬에서 설치했던 것과 같이 http://localhost:8080으로 들어가면 웹서버를 볼 수 있습니다.  
+로컬에서 설치했던 것과 같이 http://localhost:8080 으로 들어가면 웹서버를 볼 수 있습니다.  
   
 아래에서는 방금 실행한 yaml 파일과 함께 환경 구성이 어떻게 되어있나 확인해 보겠습니다.  
 
@@ -64,7 +65,7 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 구성환경을 확인하기 위해 docker-compose로 실행하는 yaml, docker 이미지를 생성할 때 쓴 Dockfile, 
 그리고 컨테이너가 올라올 때 실행되는 ENTRYPOINT까지 세개의 파일을 보겠습니다.
 
-먼저 `docker-compose-LocalExecutor.yml` 파일을 보겠습니다. 
+먼저 `docker-compose-LocalExecutor.yml` 입니다.
 
 ```yaml
 version: '2.1' 
