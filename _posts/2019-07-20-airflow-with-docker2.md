@@ -112,7 +112,7 @@ FERNET_KEY는 db 안에서의 암호화된 통신을 위한 키였습니다. Loc
         restart: always
         depends_on:
             - webserver # scheduler를 db, mq에 의존성 설정을 할 줄 알았는데 webserver만 보고 있네요.
-                        # 본체는 웹서버였던건가.. 이러면 웹서버가 죽으면 스케쥴러도 db, mq에 연결 못하지 않나?
+                        # 처음에 띄울때 설정만 따라가나보다, depends_on의 depends_on 느낌으로.
         volumes:
             - ./dags:/usr/local/airflow/dags
             # Uncomment to include custom plugins
