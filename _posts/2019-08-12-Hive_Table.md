@@ -46,13 +46,13 @@ CREATE EXTERNAL TABLE table_name(
     col2 INT
     )
 STORED AS PARQUET
-LOCATIONO '/file/path/some/where';
+LOCATION '/file/path/some/where';
 ```
 
 ### json 파일로 table 생성
 유연성이 높은 json입니다. 쌓아야할 데이터 형태가 바뀔 가능성이 있다면 json이죠.
 
-```
+```sql
 CREATE EXTERNAL TABLE table_name(
     col1 STRING,
     col2 STRING,
@@ -93,7 +93,9 @@ IF NOT EXIST PARTITION (year=2019, month='08');
 한글 데이터의 경우, `euc-kr` 등 해외에서는 잘 안쓰는 인코딩으로 되어있기 때문에,
   변경이 필요할 때가 있습니다. (기본값은 `utf-8`)
 
-`ALTER TABLE table_name SET SERDEPROPERTIES ('serialization.encoding'='euc-kr');`
+```sql
+ALTER TABLE table_name SET SERDEPROPERTIES ('serialization.encoding'='euc-kr');
+```
 
 
 
