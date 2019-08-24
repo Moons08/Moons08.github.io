@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko"
@@ -101,7 +101,7 @@ author:
   name             : "Moonsoo Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Live with data"
-  location         : "Seongnam, Korea"
+  location         : "Seoul, Korea"
   email            : "mskk0805@gmail.com"
   uri              :
   home             : "#" #null (default), "absolute or relative url to link to author home"
