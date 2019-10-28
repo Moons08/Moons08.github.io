@@ -26,7 +26,7 @@ mathjax: true
 
 ### Contiguous Allocation
 
-![img](/assets/img/os/FileAllocation/contiguous_index.png)  
+![img](/assets/img/os/FileAllocation/contiguous_index.png){: .align-left width="300"}  
 디스크 상의 연속된 블록에 파일 할당
 
 - 장점
@@ -43,6 +43,7 @@ mathjax: true
 
 ### Linked Allocation
 
+![img](/assets/img/os/FileAllocation/linked_index.png){: .align-left width="300"}  
 파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
 
 - 장점
@@ -55,11 +56,9 @@ mathjax: true
     - 포인터 유실되면? *노답* → 낮은 신뢰성
   - 디스크 헤더가 왔다갔다 해야함 → 속도저하 *(SSD라면 어떨까?)*
 
-![img](/assets/img/os/FileAllocation/linked_index.png)
-
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
-![img](/assets/img/os/FileAllocation/linked_FAT.png){: .align-left}
+![img](/assets/img/os/FileAllocation/linked_FAT.png){: .align-left width="300"}
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
 
@@ -79,7 +78,7 @@ mathjax: true
 
 파일 마다 포인터의 모음인 인덱스 블록을 하나씩 생성. 디렉토리는 인덱스 블록을 가리킴
 
-![img](/assets/img/os/FileAllocation/indexed.png)
+![img](/assets/img/os/FileAllocation/indexed.png){: .align-left width="300"}
 
 - 장점
   - Direct access 가능
@@ -94,15 +93,20 @@ mathjax: true
 
 인덱스 블록을 여러개 사용하여 단점 극복. Unix/Linux 등에서 사용
 
-![img](/assets/img/os/FileAllocation/indexed_linked.png)
+<figure style="width: 600px"  class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_multilevel.png" alt="">
+  <figcaption>linked index</figcaption>
+</figure>  
 
-![img](/assets/img/os/FileAllocation/indexed_multilevel.png)  
-combined  
 
-<figure style="width: 300px">
+<figure style="width: 300px"  class="align-left">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_multilevel.png" alt="">
+  <figcaption>multilevel index</figcaption>
+</figure>  
+
+<figure style="width: 300px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_combined.png" alt="">
-  <figcaption>test.</figcaption>
-</figure> 
-
+  <figcaption>combined index</figcaption>
+</figure>
 
 EOD
