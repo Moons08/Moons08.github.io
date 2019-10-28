@@ -59,7 +59,7 @@ mathjax: true
 
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
-![img](/assets/img/os/FileAllocation/linked_FAT.png)
+![img](/assets/img/os/FileAllocation/linked_FAT.png){: .align-left}
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
 
@@ -98,6 +98,11 @@ mathjax: true
 
 ![img](/assets/img/os/FileAllocation/indexed_multilevel.png)  
 combined  
-![img](/assets/img/os/FileAllocation/indexed_combined.png)
+
+<figure style="width: 300px">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_combined.png" alt="">
+  <figcaption>test.</figcaption>
+</figure> 
+
 
 EOD
