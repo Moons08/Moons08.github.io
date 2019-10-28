@@ -267,3 +267,4 @@ defaults:
       comments: true
       share: true
       related: true
+      toc_sticky: true
