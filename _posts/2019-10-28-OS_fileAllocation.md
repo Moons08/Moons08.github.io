@@ -4,9 +4,7 @@ date: 2019-10-28
 tags: CS OS
 category: programming
 toc: true
-toc_label: "File Allocation"
-toc_icon: "book"
-toc_sticky: false
+toc_sticky: true
 mathjax: true
 ---  
 보조기억장치인 파일 시스템(하드 디스크)에 파일을 할당하는 방법
@@ -26,9 +24,9 @@ mathjax: true
 
 ### Contiguous Allocation
 
-<figure style="width: 200px"  class="align-right">
+<figure style="width: 160px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_index.png" alt="">
-  <figcaption>contiguous_index</figcaption>
+  <figcaption>contiguous index</figcaption>
 </figure>
 
 디스크 상의 연속된 블록에 파일 할당
@@ -45,9 +43,9 @@ mathjax: true
 
 ### Linked Allocation
 
-<figure style="width: 200px"  class="align-right">
+<figure style="width: 250px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_index.png" alt="">
-  <figcaption>linked_index</figcaption>
+  <figcaption>linked index</figcaption>
 </figure>
 
 파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
@@ -64,9 +62,9 @@ mathjax: true
 
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
-<figure style="width: 200px"  class="align-right">
+<figure style="width: 300px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
-  <figcaption>FAT</figcaption>
+  <figcaption>file allocation table</figcaption>
 </figure>
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
@@ -87,7 +85,7 @@ mathjax: true
 
 <figure style="width: 200px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed.png" alt="">
-  <figcaption>Indexed Allocation</figcaption>
+  <figcaption>indexed allocation</figcaption>
 </figure>
 
 파일 마다 포인터의 모음인 인덱스 블록을 하나씩 생성. 디렉토리는 인덱스 블록을 가리킴
