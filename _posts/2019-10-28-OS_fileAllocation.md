@@ -26,6 +26,13 @@ mathjax: true
 
 ### Contiguous Allocation
 
+<figure style="width: 500px"  class="align-right">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_index.png" alt="">
+  <figcaption>contiguous_index</figcaption>
+</figure>
+
+디스크 상의 연속된 블록에 파일 할당
+
 - 장점
   - 디스크 헤더 이동 최소화 (빠른 I/O)
   - sequential, direct access 가능
@@ -35,10 +42,15 @@ mathjax: true
   - 파일 생성 시
     - 파일 크기 가늠 X → 어디에 놓을지 모르게 됨
     - 파일 크기가 계속 증가할 경우? Ex) *log file* → 문제  
-![img](/assets/img/os/FileAllocation/contiguous_index.png){: .align-rigth width="150"}  
-디스크 상의 연속된 블록에 파일 할당
 
 ### Linked Allocation
+
+<figure style="width: 300px"  class="align-right">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_index.png" alt="">
+  <figcaption>linked_index</figcaption>
+</figure>
+
+파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
 
 - 장점
   - 외부 단편화 해결
@@ -50,10 +62,12 @@ mathjax: true
     - 포인터 유실되면? *노답* → 낮은 신뢰성
   - 디스크 헤더가 왔다갔다 해야함 → 속도저하 *(SSD라면 어떨까?)*
 
-![img](/assets/img/os/FileAllocation/linked_index.png){: .align-rigth width="300"}  
-파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
-
 #### 향상: FAT 파일 시스템 (File Allocation Table)
+
+<figure style="width: 300px"  class="align-right">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
+  <figcaption>FAT</figcaption>
+</figure>
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
 
@@ -67,14 +81,14 @@ mathjax: true
     (**더 큰 파일**은 어떻게 하지?)
 - MS-DOS, Windows 등에서 사용
 
-<figure style="width: 300px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
-  <figcaption>linked_FAT</figcaption>
-</figure>
-
 ---
 
 ### Indexed Allocation
+
+<figure style="width: 400px"  class="align-rigth">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed.png" alt="">
+  <figcaption>Indexed Allocation</figcaption>
+</figure>
 
 파일 마다 포인터의 모음인 인덱스 블록을 하나씩 생성. 디렉토리는 인덱스 블록을 가리킴
 
@@ -87,8 +101,6 @@ mathjax: true
     - Ex) 1 블록이 512 byte = 4 byte \* 128개 인덱스 -> 128 \* 512 byte = 64KB  
       *이걸 어따 붙여* -> 인덱스 블록 여러개 사용  
 
-![img](/assets/img/os/FileAllocation/indexed.png){: .align-left width="300"}
-
 #### 향상: Linked, Multilevel index, Combined
 
 인덱스 블록을 여러개 사용하여 단점 극복. Unix/Linux 등에서 사용
@@ -97,7 +109,6 @@ mathjax: true
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_linked.png" alt="">
   <figcaption>linked index</figcaption>
 </figure>  
-
 
 <figure style="width: 300px"  class="align-left">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_multilevel.png" alt="">
@@ -108,5 +119,3 @@ mathjax: true
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_combine.png" alt="">
   <figcaption>combined index</figcaption>
 </figure>
-
-EOD
