@@ -26,7 +26,7 @@ mathjax: true
 
 ### Contiguous Allocation
 
-<figure style="width: 500px"  class="align-right">
+<figure style="width: 200px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_index.png" alt="">
   <figcaption>contiguous_index</figcaption>
 </figure>
@@ -45,7 +45,7 @@ mathjax: true
 
 ### Linked Allocation
 
-<figure style="width: 300px"  class="align-right">
+<figure style="width: 200px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_index.png" alt="">
   <figcaption>linked_index</figcaption>
 </figure>
@@ -64,7 +64,7 @@ mathjax: true
 
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
-<figure style="width: 300px"  class="align-right">
+<figure style="width: 200px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
   <figcaption>FAT</figcaption>
 </figure>
@@ -85,7 +85,7 @@ mathjax: true
 
 ### Indexed Allocation
 
-<figure style="width: 400px"  class="align-rigth">
+<figure style="width: 200px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed.png" alt="">
   <figcaption>Indexed Allocation</figcaption>
 </figure>
