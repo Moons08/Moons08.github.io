@@ -6,7 +6,7 @@ category: programming
 toc: true
 toc_label: "File Allocation"
 toc_icon: "book"
-toc_sticky: true
+toc_sticky: false
 mathjax: true
 ---  
 보조기억장치인 파일 시스템(하드 디스크)에 파일을 할당하는 방법
@@ -26,7 +26,7 @@ mathjax: true
 
 ### Contiguous Allocation
 
-![img](/assets/img/os/FileAllocation/contiguous_index.png){: .align-left width="300"}  
+![img](/assets/img/os/FileAllocation/contiguous_index.png){: .align-rigth width="150"}  
 디스크 상의 연속된 블록에 파일 할당
 
 - 장점
@@ -39,11 +39,9 @@ mathjax: true
     - 파일 크기 가늠 X → 어디에 놓을지 모르게 됨
     - 파일 크기가 계속 증가할 경우? Ex) *log file* → 문제
 
----
-
 ### Linked Allocation
 
-![img](/assets/img/os/FileAllocation/linked_index.png){: .align-left width="300"}  
+![img](/assets/img/os/FileAllocation/linked_index.png){: .align-rigth width="300"}  
 파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
 
 - 장점
@@ -58,7 +56,7 @@ mathjax: true
 
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
-![img](/assets/img/os/FileAllocation/linked_FAT.png){: .align-left width="300"}
+![img](/assets/img/os/FileAllocation/linked_FAT.png){: .align-rigth width="300"}
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
 
