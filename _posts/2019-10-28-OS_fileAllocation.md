@@ -6,8 +6,9 @@ category: programming
 toc: true
 toc_label: "File Allocation"
 toc_icon: "book"
----
-파일 할당  
+toc_sticky: true
+mathjax: true
+---  
 보조기억장치인 파일 시스템(하드 디스크)에 파일을 할당하는 방법
 
 ## 하드디스크
@@ -25,6 +26,7 @@ toc_icon: "book"
 
 ### Contiguous Allocation
 
+![img](/assets/img/os/FileAllocation/contiguous_index.png)  
 디스크 상의 연속된 블록에 파일 할당
 
 - 장점
@@ -36,8 +38,6 @@ toc_icon: "book"
   - 파일 생성 시
     - 파일 크기 가늠 X → 어디에 놓을지 모르게 됨
     - 파일 크기가 계속 증가할 경우? Ex) *log file* → 문제
-
-![img](/assets/img/os/FileAllocation/contiguous_index.png)
 
 ---
 
@@ -57,7 +57,9 @@ toc_icon: "book"
 
 ![img](/assets/img/os/FileAllocation/linked_index.png)
 
-#### 향상: FAT 파일 시스템 (File Allocation **Table**)
+#### 향상: FAT 파일 시스템 (File Allocation Table)
+
+![img](/assets/img/os/FileAllocation/linked_FAT.png)
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
 
@@ -67,11 +69,9 @@ toc_icon: "book"
 
 - FAT32, FAT16 숫자의 의미?
   - 숫자는 FAT 인덱스 하나가 저장할 수 있는 숫자 크기를 의미
-    즉, FAT32(32bit)는  $2^32$ 까지의 인덱스 저장 가능  
-    **더 큰 파일**은 어떻게 하지?
+    즉, FAT32(32bit)는  $2^{32}$ 까지의 인덱스 저장 가능  
+    (**더 큰 파일**은 어떻게 하지?)
 - MS-DOS, Windows 등에서 사용
-
-![img](/assets/img/os/FileAllocation/linked_FAT.png)
 
 ---
 
@@ -96,8 +96,8 @@ toc_icon: "book"
 
 ![img](/assets/img/os/FileAllocation/indexed_linked.png)
 
-![img](/assets/img/os/FileAllocation/indexed_multilevel.png)
-combined
+![img](/assets/img/os/FileAllocation/indexed_multilevel.png)  
+combined  
 ![img](/assets/img/os/FileAllocation/indexed_combined.png)
 
 EOD
