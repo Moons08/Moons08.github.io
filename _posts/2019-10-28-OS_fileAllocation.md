@@ -1,7 +1,7 @@
 ---
 title: OS - File Allocation
 date: 2019-10-28
-tags: CS OS
+tags: CS
 category: programming
 toc: true
 toc_sticky: true
