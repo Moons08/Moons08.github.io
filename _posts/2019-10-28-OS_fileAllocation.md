@@ -25,8 +25,8 @@ mathjax: true
 ### Contiguous Allocation
 
 <figure style="width: 160px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_index.png" alt="">
-  <figcaption>contiguous index</figcaption>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_allocation.png" alt="">
+  <figcaption>contiguous allocation</figcaption>
 </figure>
 
 디스크 상의 연속된 블록에 파일 할당
@@ -44,8 +44,8 @@ mathjax: true
 ### Linked Allocation
 
 <figure style="width: 250px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_index.png" alt="">
-  <figcaption>linked index</figcaption>
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_allocation.png" alt="">
+  <figcaption>linked allocation</figcaption>
 </figure>
 
 파일 블록마다 다음 블록을 가리키는 **포인터를 저장**
@@ -64,7 +64,7 @@ mathjax: true
 
 <figure style="width: 300px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
-  <figcaption>file allocation table</figcaption>
+  <figcaption>File Allocation Table</figcaption>
 </figure>
 
 포인터만 모은 테이블을 **별도 블록** 에 저장 (손실 복구를 위해 이중 저장)
