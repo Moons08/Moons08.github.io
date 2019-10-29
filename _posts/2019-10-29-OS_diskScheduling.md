@@ -7,7 +7,9 @@ toc: true
 toc_sticky: true
 mathjax: true
 --- 
-디스크 접근 시간은 Seek time, rotational delay, transfer time 으로 구성되며, 이 중 데이터의 위치는 찾는 Seek time 이 가장 오래 걸린다. 데이터를 읽고 쓰는 작업을 위한 대기열인 디스크 큐 (disk queue) 에는 많은 요청(request)이 쌓여있다.
+디스크 접근 시간은 Seek time, rotational delay, transfer time 으로 구성되며, 이 중 데이터의 위치는 찾는 Seek time 이 가장 오래 걸린다.
+데이터를 읽고 쓰는 작업을 위한 대기열인 디스크 큐 (disk queue) 에는 많은 요청(request)이 쌓여있다.
+디스크 스케쥴링은 이렇게 쌓여있는 요청들을 효율적으로 처리하는 방법이다.
 
 ## Basic
 
