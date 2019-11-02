@@ -102,7 +102,7 @@ Frame = page, 페이지 단위로 프레임을 할당한다.
 
 <figure style="width: 300px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/VirtualMemory/thrashing.png" alt="">
-  <figcaption>Trashing [Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
+  <figcaption>Thrashing [Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
 </figure>
 
 CPU utilization vs. Degree of multiprogramming  
