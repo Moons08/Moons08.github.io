@@ -100,9 +100,9 @@ Frame = page, 페이지 단위로 프레임을 할당한다.
 
 ### Thrashing
 
-<figure style="width: 450px"  class="align-right">
+<figure style="width: 300px"  class="align-right">
   <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/VirtualMemory/thrashing.png" alt="">
-  <figcaption>[Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
+  <figcaption>Trashing [Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
 </figure>
 
 CPU utilization vs. Degree of multiprogramming  
@@ -120,14 +120,14 @@ CPU utilization vs. Degree of multiprogramming
 
 #### Dynamic Allocation
 
+<figure style="width: 300px"  class="align-right">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/VirtualMemory/PFF.png" alt="">
+  <figcaption>PFF [Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
+</figure>
+
 - Working set model
   - 각 프로세스의 **시간대 별 프레임 사용량(working set)**을 이용하여 그 만큼의 프레임을 할당한다.
   - working set window: 얼마만큼의 시간범위(window)를 단위로 쓰는 지에 따라 결과가 달라진다.
-
-<figure style="width: 450px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/VirtualMemory/PFF.png" alt="">
-  <figcaption>[Techniques to handle Thrashing - GeeksforGeeks]</figcaption>
-</figure>
 
 - Page-Fault Frequency (PFF)
   - page fault 발생 비율의 상/하한선을 설정
@@ -153,4 +153,3 @@ CPU utilization vs. Degree of multiprogramming
 ### 기술 동향
 
 초반에는 페이지 테이블을 위한 별도의 chip(TLB 캐시)이 있었으나 기술 발전에 따라 캐시 메모리, TLB 모두 on-chip, cpu 안에 넣어쓴다.
- 
