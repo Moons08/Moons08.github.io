@@ -153,3 +153,4 @@ CPU utilization vs. Degree of multiprogramming
 ### 기술 동향
 
 초반에는 페이지 테이블을 위한 별도의 chip(TLB 캐시)이 있었으나 기술 발전에 따라 캐시 메모리, TLB 모두 on-chip, cpu 안에 넣어쓴다.
+ 
