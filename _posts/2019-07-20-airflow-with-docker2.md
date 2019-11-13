@@ -1,5 +1,5 @@
 ---
-title: \[Airflow] docker를 활용한 초간단 설치하기 2
+title: \[Airflow] docker 활용 초간단 설치 2
 date: 2019-07-21
 tags: airflow docker
 category: programming
