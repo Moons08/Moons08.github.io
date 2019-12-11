@@ -1,8 +1,15 @@
-# 주기억 장치 관리
+---
+title: OS - Main Memory Management
+date: 2019-12-11
+tags: CS
+category: programming
+toc: true
+toc_sticky: true
+--- 
 
-기술 발전에도 불구하고 메모리는 언제나 부족하다. 발전하는 만큼 프로그램도 커지기 때문이다. 효과적 사용을 위해서 다음과 같은 방법들을 사용한다.
+기술 발전에도 불구하고 주기억장치, 메인 메모리는 언제나 부족하다. 발전하는 만큼 프로그램도 커지기 때문이다. 효과적 사용을 위해서 다음과 같은 방법들을 사용한다.
 
-- [주기억 장치 관리 - 메모리 낭비 방지](bear://x-callback-url/open-note?id=732AE317-4156-4CD0-B629-437479BFFEF4-22842-000064F808F2F5C6&header=%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EB%82%AD%EB%B9%84%20%EB%B0%A9%EC%A7%80)
+- OS - Main Memory Management > 메모리 낭비 방지
 - [OS - Virtual Memory - Mk’s Blog](https://moons08.github.io/programming/OS_virtual_memory/)
 
 ## 프로그램을 메모리로
