@@ -58,7 +58,10 @@ CPU가 사용하는 주소(logical address)는 실제 메모리에 위치해 있
 
 프로세스를 일정크기(=page)로 잘라서 메모리에 올리는 방법이다. 프로세스는 페이지의 집합이고, 메모리는 프레임의 집합이다. 따라서 페이지를 프레임 단위로 할당한다고 볼 수 있다. 위에서 말했듯이, MMU 내의 재배치 레지스터 값을 바꿈으로써 MMU가 페이지 테이블 역할을 하게되고, CPU는 프로세스가 연속된 메모리 공간에 위치한다고 생각하고 작업을 하게 된다.
 
-![MMU](../assets/img/os/MainMomory/MMU.jpg)
+<figure style="width: 450px"  class="align-center">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/MainMomory/MMU.jpg" alt="MMU">
+  <figcaption></figcaption>
+</figure>
 
 ### 주소 변환 (Address Translation)
 
