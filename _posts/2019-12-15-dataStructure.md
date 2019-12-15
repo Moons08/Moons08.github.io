@@ -3,6 +3,7 @@ title: Data Structure - 자료구조 정리
 date: 2019-12-15
 tags: CS
 category: programming
+mathjax: true
 toc: true
 toc_sticky: true
 --- 
