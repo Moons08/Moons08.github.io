@@ -268,4 +268,5 @@ defaults:
       share: true
       related: true
       toc_sticky: true
+      toc_ads: true
       autoads: true
