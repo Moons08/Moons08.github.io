@@ -23,7 +23,7 @@ description              : "personal web for Moonsoo Kim"
 url                      : "https://Moons08.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Moons08/Moons08.github.io"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : "/assets/img/monkey.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -99,7 +99,7 @@ analytics:
 # Site Author
 author:
   name             : "Moonsoo Kim"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/img/monkey.png"
   bio              : "Live with data"
   location         : "Seoul, Korea"
   email            : "mskk0805@gmail.com"
@@ -263,7 +263,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
+      read_time: true
       comments: true
       share: true
       related: true
