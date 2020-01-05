@@ -23,7 +23,7 @@ description              : "personal web for Moonsoo Kim"
 url                      : "https://Moons08.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Moons08/Moons08.github.io"
-teaser                   : "/assets/img/monkey.png"
+teaser                   : "/assets/img/monkey_256.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -80,7 +80,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 : # Open Graph/Twitter default site image
+og_image                 : "/assets/img/monkey_256.png"
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
@@ -99,7 +99,7 @@ analytics:
 # Site Author
 author:
   name             : "Moonsoo Kim"
-  avatar           : "/assets/img/monkey.png"
+  avatar           : "/assets/img/monkey_256.png"
   bio              : "Live with data"
   location         : "Seoul, Korea"
   email            : "mskk0805@gmail.com"
