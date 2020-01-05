@@ -3,6 +3,7 @@ layout: archive
 permalink: /archive/
 title: "Posts by Month"
 author_profile: true
+toc_ads: true
 ---
 {% assign postsByMonth = site.posts | group_by_exp:"post", "post.date | date: '%b %Y'" %}
 
