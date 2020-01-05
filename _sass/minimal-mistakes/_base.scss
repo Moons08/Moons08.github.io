@@ -76,10 +76,15 @@ ins {
   }
 }
 
-/* 구글 애드 센스의 아래 바 레이아웃 삭제
+/* devinlife comment: 구글 애드 센스의 아래 바 레이아웃 삭제
  https://github.com/mmistakes/minimal-mistakes/issues/306 */
- ins.adsbygoogle {
+ins.adsbygoogle {
   border-bottom: none !important;
+  margin-bottom: 1em;
+}
+
+.toc-custom {
+  margin-top: 1em;
 }
 
 del a {
@@ -136,14 +141,13 @@ a {
     @extend %tab-focus;
   }
 
-  &:hover,
-  &:active {
-    color: $link-color-hover;
-    outline: 0;
-  }
-
   &:visited {
     color: $link-color-visited;
+  }
+
+  &:hover {
+    color: $link-color-hover;
+    outline: 0;
   }
 }
 
@@ -174,7 +178,7 @@ figcaption > code,
 td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
-  font-size: $type-size-6;
+  font-size: 0.8em;
   background: $code-background-color;
   border-radius: $border-radius;
 
