@@ -2,22 +2,20 @@
 title: \[Airflow] docker 활용 초간단 설치
 date: 2019-07-20
 tags: airflow docker
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
-docker를 이용하여 airflow를 로컬에 설치하던 것보다 더 쉽게 설치해보겠습니다. 
-에어플로우를 더 아름답게 쓰기 위해서는 executor, db 설정이 필요한데, 
-모든 환경설정이 그렇듯이 설치할 부품들이 늘어날수록 고통도 늘어납니다. 
-이런 상황에서 docker는 그런 고통들을 줄여주는 아주 좋은 도구입니다.  
-
+docker를 이용하여 airflow를 로컬에 설치하던 것보다 더 쉽게 설치해보겠습니다. 에어플로우를 더 아름답게 쓰기 위해서는 executor, db 설정이 필요한데, 모든 환경설정이 그렇듯이 설치할 부품들이 늘어날수록 고통도 늘어납니다. 이런 상황에서 docker는 그런 고통들을 줄여주는 아주 좋은 도구입니다.  
 
 ## 설치
   <!--도커 설치를 위해서는 [여기]()를 참조해 주세요.-->  
 dockfile과 이미지를 잘 만들어놓은 레포를 이용하겠습니다.
 
 ```bash
-$ git clone https://github.com/puckel/docker-airflow
-$ cd docker-airflow
+$git clone https://github.com/puckel/docker-airflow
+$cd docker-airflow
 $ tree
 .
 ├── Dockerfile
@@ -35,11 +33,10 @@ $ tree
 └── script
     └── entrypoint.sh
 ```
-  
-  
+
 그리고 도커 이미지를 도커허브에서 받아옵니다. 이건 시간이 조금 걸려요
 ```bash
-$ docker pull puckel/docker-airflow 
+$docker pull puckel/docker-airflow 
 ```
 
 놀랍게도 준비가 끝났습니다. 이제 실행만하면 됩니다.

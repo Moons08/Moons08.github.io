@@ -2,7 +2,9 @@
 title: \[Airflow] Branch로 상황에 맞는 작업 수행하기
 date: 2019-03-17
 tags: airflow
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
 선행 작업의 결과에 따라 이어나갈 작업이 달라야 할 때는 Branch로 분기를 나누어 줄 수 있습니다.
@@ -23,7 +25,7 @@ category: programming
 위와 같이 분기가 필요한 상황에 `BranchPythonOperator`를 이용할 수 있습니다.
 해당 오퍼레이터를 사용하면 다음과 비슷한 workflow 모습을 볼 수 있습니다.
 
-![img](/assets/img/airflow/branch.png)
+![img](/assets/img/post/airflow/branch.png)
 *path_A가 선택되어 B 방향은 skip 된 모습*
 
 첫 번째 Task가 완료되면 `check_situation`에서 적절한 path를 선택하여 작업 흐름을 이어나갈 수 있습니다. 선택되지 않은 path는 skip 처리되며 작업 흐름에 영향을 주지 않습니다.

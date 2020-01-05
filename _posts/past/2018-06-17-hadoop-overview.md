@@ -29,7 +29,7 @@ High-Availability Distributed Object-Oriented Platform
 
 위 기반을 바탕으로 Hive, Hbase, Spark, Pig, Mahout 등의 application 생태계가 구성됨
 
-![png](/assets/img/HadoopStack.png)
+![png](/assets/img/post/past/HadoopStack.png)
 
 위 그림은 간략한 하둡 생태계, 실제로는 훨씬 많다. [Image Source](http://blog.newtechways.com/2017/10/apache-hadoop-ecosystem.html)
 
@@ -65,7 +65,7 @@ data source - [GroupLens Research](https://grouplens.org/datasets/movielens/): m
 맵리듀스는 맵과 리듀스를 통칭해 부르는 것이다.
 맵(Map)은 입력 파일을 한 줄씩 읽어서 데이터를 변형(transformation)하며, 리듀스(Reduce)는 맵의 결과 데이터를 집계(aggregation)한다.
 
-![png](/assets/img/map_reduce.png)
+![png](/assets/img/post/past/map_reduce.png)
 [Image source](https://opentutorials.org/module/2926/17055)
 
 

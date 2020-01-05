@@ -2,7 +2,9 @@
 title: \[Airflow] Basic Concept 알아보기
 date: 2019-03-02
 tags: airflow
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 에어플로우를 사용하기 위한 가장 기초적인 개념에 대해 정리해봤습니다.
 
@@ -18,7 +20,6 @@ DAG와 Operator를 결합하여 Task Instance를 만들면 복잡한 Workflow를
     - Task Instance : 1) DAG에 할당되고 2) DAG의 특정 실행과 관련된 상태가 있는 Task
 
 *아래는 좀 더 깊게 설명한 airflow 공식 문서를 조금 변형하여 가져왔습니다.*
-
 
 ## DAGs
 
@@ -36,8 +37,8 @@ Airflow에서 DAG 또는 Directed Acyclic Graph(비 순환 그래프)는 실행�
 
 DAG는 Airflow의 `DAG_FOLDER`에있는 표준 Python 파일에 정의되어 있습니다. Airflow는 각 파일의 코드를 실행하여 DAG 개체를 동적으로 작성합니다. 원하는 수의 DAG를 가질 수 있으며 각 DAG는 임의의 수의 작업을 설명합니다. 일반적으로 DAG는 각각 하나의 논리적 workflow에 대응해야 합니다.
 
-
 ### Default Arguments
+
 예제에서 봤던 그것입니다. 미리 dag에 전달할 *(최종적으로는 Operator들에게 전달될)* arguments들을 정의해 놓으면 편리하게 사용할 수 있습니다. 자주 쓰는 몇 가지만 설명하도록 하겠습니다. 전체 파라미터 설명은 [여기](https://airflow.apache.org/code.html#airflow.models.BaseOperator)에서 확인할 수 있습니다.
 
 ```python
@@ -71,11 +72,11 @@ def my_function():
 
 my_function()
 ```
+
 이런 성질은 유용하게 쓰일 곳이 있을 겁니다. `SubDagOperator`를 확인해보세요.
 
-<br>
-
 ## Operator
+
 **DAG는 workflow를 실행하는 방법을 설명하지만, Operator는 실제로 수행할 작업을 결정합니다.**
 
 Operator는 대개 (항상 그런 것은 아니지만) 독립적으로 동작합니다. 따라서 서로 다른 Operator 간에 자원을 공유 할 필요가 없습니다. DAG는 Operator들이 올바른 순서로 운영되는지 확인합니다. 실제로 Operator들은 완전히 다른 기계에서 작동 할 수도 있습니다.

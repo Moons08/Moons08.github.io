@@ -26,7 +26,7 @@ toc_sticky: true
 ## Queues
 
 <figure style="width: 500px"  class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/ProcessManagement/process.jpg" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/ProcessManagement/process.jpg" alt="">
   <figcaption></figcaption>
 </figure>
 

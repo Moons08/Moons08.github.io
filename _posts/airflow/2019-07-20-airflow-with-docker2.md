@@ -2,20 +2,21 @@
 title: \[Airflow] docker 활용 초간단 설치 2
 date: 2019-07-21
 tags: airflow docker
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
 지난 포스트에 이어 CELERY EXECUTOR를 사용하는 에어플로우, 도커로 설치하기 입니다.  
 설치 앞부분을 위한 깃레포, 도커이미지를 받아오는 부분은
- [이전 포스트](https://moons08.github.io/programming/airflow-with-docker/)를 확인해주세요.
+ [이전 포스트](/airflow/airflow-with-docker/)를 확인해주세요.
 
-
-### CeleryExecutor 
+### CeleryExecutor
 
 ```bash
-$ docker stop $(docker ps -aq) # 도커로 뭔가 실행중이라면 일단 멈춰주고,
-$ docker-compose -f docker-compose-CeleryExecutor.yml up -d # 이번에는 이 yaml 파일로 띄워봅니다.
-$ docker ps
+$docker stop $(docker ps -aq) # 도커로 뭔가 실행중이라면 일단 멈춰주고,
+$docker-compose -f docker-compose-CeleryExecutor.yml up -d # 이번에는 이 yaml 파일로 띄워봅니다.
+$docker ps
 
 CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS                            PORTS                                        NAMES
 7e2a4556a97a        puckel/docker-airflow:1.10.3   "/entrypoint.sh work…"   5 seconds ago       Up 3 seconds                      5555/tcp, 8080/tcp, 8793/tcp                 airflow_worker_1
@@ -25,15 +26,15 @@ b42f37b83f69        puckel/docker-airflow:1.10.3   "/entrypoint.sh webs…"   9 
 69c1ece9dc38        postgres:9.6                   "docker-entrypoint.s…"   10 seconds ago      Up 8 seconds                      5432/tcp                                     airflow_postgres_1
 80bacd716140        redis:3.2.7                    "docker-entrypoint.s…"   10 seconds ago      Up 8 seconds                      6379/tcp                                     airflow_redis_1
 ```
+
 CeleryExecutor를 사용하는 yml 파일을 실행할 경우 위와 같습니다.
 LocalExecutor 실행했던 것과 다르게 컨테이너들이 뭔가 많이 생겼습니다. 이름을 보니 postgres 이건 db고, webserver, scheduler.. 
 익숙한 것들도 있네요. 실습을 위한 환경구성은 위의 명령어 하나로 끝입니다. 조금 더 자세히 보실 분을 계속 읽어주세요.
 
-### yaml file 
+### yaml file
 
 위에서 `docker-compose`로 실행했던 `docker-compose-CeleryExecutor.yml`파일을 찬찬히 읽어 보겠습니다.
- 서비스는 6개, webserver, scheduler(airflow), postgres(DB), 
- redis(MQ), celery(worker), flower(worker monitor)로 구성 되어있네요. 
+ 서비스는 6개, webserver, scheduler(airflow), postgres(DB), redis(MQ), celery(worker), flower(worker monitor)로 구성 되어있네요.
 
 ```yaml
 version: '2.1'
@@ -44,7 +45,7 @@ services:
                   # 이전에 rabbitMQ랑 db 연동해서 설치한다고 고생 좀 했었는데, 도커로 하니 좋네요.
                   # `requirepass` 부분으로 redis 비밀번호를 설정합니다.
     postgres:
-        image: postgres:9.6 # 여기서도 db로 postgres를 씁니다. 
+        image: postgres:9.6 # 여기서도 db로 postgres를 씁니다.
         environment:
             - POSTGRES_USER=airflow
             - POSTGRES_PASSWORD=airflow # db 로그인 설정을 해주고

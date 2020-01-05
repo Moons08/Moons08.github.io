@@ -2,7 +2,9 @@
 title: \[Airflow] 간단 설치
 date: 2019-03-01 09:00:00 -0600
 tags: airflow
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
 다양한 extra pakages가 존재하나, 일단 기본 airflow를 설치합시다.

@@ -39,7 +39,7 @@ result_boston = model_boston.fit()
 fig = sm.graphics.plot_regress_exog(result_boston, "CRIM", fig=plt.figure(figsize=(10, 5)))
 plt.show()
 ```
-![img](/assets/img/partial.png)
+![img](/assets/img/post/past/partial.png)
 
 
 위 그림은 보스톤 집값에 대한 데이터로 partial plot이 포함된 분석 결과를 표현한 것이다.

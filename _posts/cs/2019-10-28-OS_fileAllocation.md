@@ -4,9 +4,8 @@ date: 2019-10-28
 tags: CS
 category: programming
 toc: true
-toc_sticky: true
 mathjax: true
----  
+---
 보조기억장치인 파일 시스템(하드 디스크)에 파일을 할당하는 방법
 
 ## 하드디스크
@@ -25,7 +24,7 @@ mathjax: true
 ### Contiguous Allocation
 
 <figure style="width: 160px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/contiguous_allocation.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/contiguous_allocation.png" alt="">
   <figcaption>contiguous allocation</figcaption>
 </figure>
 
@@ -44,7 +43,7 @@ mathjax: true
 ### Linked Allocation
 
 <figure style="width: 250px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_allocation.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/linked_allocation.png" alt="">
   <figcaption>linked allocation</figcaption>
 </figure>
 
@@ -63,7 +62,7 @@ mathjax: true
 #### 향상: FAT 파일 시스템 (File Allocation Table)
 
 <figure style="width: 300px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/linked_FAT.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/linked_FAT.png" alt="">
   <figcaption>File Allocation Table</figcaption>
 </figure>
 
@@ -84,7 +83,7 @@ mathjax: true
 ### Indexed Allocation
 
 <figure style="width: 200px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/indexed.png" alt="">
   <figcaption>indexed allocation</figcaption>
 </figure>
 
@@ -104,16 +103,16 @@ mathjax: true
 인덱스 블록을 여러개 사용하여 단점 극복. Unix/Linux 등에서 사용
 
 <figure style="width: 600px"  class="align-center">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_linked.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/indexed_linked.png" alt="">
   <figcaption>linked index</figcaption>
 </figure>  
 
 <figure style="width: 300px"  class="align-left">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_multilevel.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/indexed_multilevel.png" alt="">
   <figcaption>multilevel index</figcaption>
 </figure>  
 
 <figure style="width: 300px"  class="align-right">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/os/FileAllocation/indexed_combine.png" alt="">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/img/post/os/FileAllocation/indexed_combine.png" alt="">
   <figcaption>combined index</figcaption>
 </figure>

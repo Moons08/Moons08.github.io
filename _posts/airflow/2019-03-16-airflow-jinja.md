@@ -2,7 +2,9 @@
 title: \[Airflow] Jinja Template 써보기
 date: 2019-03-16
 tags: airflow
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
 Airflow는 flask에서 자주 사용되는 강력한 도구인 Jinja Template을 지원합니다.

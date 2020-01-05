@@ -2,7 +2,9 @@
 title: \[Airflow] Slack으로 결과 전달하기
 date: 2019-03-03
 tags: airflow
-category: programming
+category: airflow
+sidebar:
+    nav: "airflow"
 ---
 
 작업 상황, 결과 등을 슬랙으로 전달하는 데 이용할 수 있는 Operator 입니다. (Mattermost도 됩니다.)
@@ -39,6 +41,7 @@ t1 = SlackAPIPostOperator(
 )
 
 ```
+
 위 스크립트를 에어플로우 홈 아래의 dags 폴더에 넣으면 끝입니다.
 
 이제 test를 해봅시다.
@@ -48,7 +51,7 @@ t1 = SlackAPIPostOperator(
 airflow test test_slak send_slack 0 # 0만 입력하면 오늘 0시 0분으로 입력이 됩니다.
 ```
 
-![img](/assets/img/airflow/slack.png)
+![img](/assets/img/post/airflow/slack.png)
 
 잘 오네요!
 토큰 생성하고 바로 실행하면 요청을 처리하지 못할 수 있습니다. 잠시 기다리시면 됩니다.
@@ -63,7 +66,7 @@ airflow test test_slak send_slack 0 # 0만 입력하면 오늘 0시 0분으로 �
 
 http://localhost:8080/admin/connection/ 로 접속해서, `create`를 눌러봅시다.
 
-![img](/assets/img/airflow/slack2.png)
+![img](/assets/img/post/airflow/slack2.png)
 
 *여기서 Login 항목은 사실 없어도 됩니다.*
 
@@ -148,11 +151,11 @@ print_date 작업이 성공하면 다음과 같이 만들어둔 slack_fail_alert
 
 <br>
 
-![img](/assets/img/airflow/slack03.png)
+![img](/assets/img/post/airflow/slack03.png)
 
 Log Url로 들어가면 작업 로그를 확인할 수 있습니다.
 
-![img](/assets/img/airflow/slack04.png)
+![img](/assets/img/post/airflow/slack04.png)
 
 *airflow test 명령어로는 slack 메세지는 전송되지만 log가 생성되지 않습니다.*
 
