@@ -2,7 +2,7 @@
 title: \[Airflow] 간단 설치
 date: 2019-03-01 09:00:00 -0600
 tags: airflow
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

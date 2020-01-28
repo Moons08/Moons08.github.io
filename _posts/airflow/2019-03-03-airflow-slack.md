@@ -2,7 +2,7 @@
 title: \[Airflow] Slack으로 결과 전달하기
 date: 2019-03-03
 tags: airflow
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

@@ -2,7 +2,7 @@
 title: \[Airflow] 간단한 예제로 시작해보기
 date: 2019-03-01 10:00:00 -0600
 tags: airflow
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

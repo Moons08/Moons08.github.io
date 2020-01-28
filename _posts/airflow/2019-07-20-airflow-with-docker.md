@@ -2,7 +2,7 @@
 title: \[Airflow] docker 활용 초간단 설치
 date: 2019-07-20
 tags: airflow docker
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

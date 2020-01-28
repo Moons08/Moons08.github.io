@@ -2,7 +2,7 @@
 title: \[Airflow] Jinja Template 써보기
 date: 2019-03-16
 tags: airflow
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

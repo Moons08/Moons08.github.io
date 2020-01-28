@@ -2,7 +2,7 @@
 title: \[Airflow] Branch로 상황에 맞는 작업 수행하기
 date: 2019-03-17
 tags: airflow
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---

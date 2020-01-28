@@ -9,28 +9,28 @@ airflow:
   - title: Install
     children: 
       - title: 로컬 설치
-        url: /airflow/airflow-install
+        url: /programming/airflow-install
       - title: 도커 설치
-        url: /airflow/airflow-with-docker
+        url: /programming/airflow-with-docker
       - title: 도커 설치 - 2
-        url: /airflow/airflow-with-docker2
+        url: /programming/airflow-with-docker2
   
   - title: Basic
     children:
     - title: 기본 개념 알아보기
-      url: /airflow/airflow-basic-concept
+      url: /programming/airflow-basic-concept
     - title: 간단 예제 따라하기
-      url: /airflow/airflow-example
+      url: /programming/airflow-example
   - title: apply
     children:
     - title: 슬랙 메시지 보내기
-      url: /airflow/airflow-slack
+      url: /programming/airflow-slack
     - title: Jinja Template 활용
-      url: /airflow/airflow-jinja
+      url: /programming/airflow-jinja
     - title: Branch 분기 나누기
-      url: /airflow/airflow-branch
+      url: /programming/airflow-branch
     - title: Subdag 활용
-      url: /airflow/airflow-subdag
+      url: /programming/airflow-subdag
 
 CS:
   - title: OS

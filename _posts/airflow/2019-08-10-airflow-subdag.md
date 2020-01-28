@@ -2,7 +2,7 @@
 title: \[Airflow] Subdag 활용하기 
 date: 2019-08-10
 tags: airflow 
-category: airflow
+category: programming
 sidebar:
     nav: "airflow"
 ---
