@@ -1,7 +1,7 @@
 ---
 title: Install apache zeppelin/spark with Docker
 date: 2019-12-28
-tags: spark docker
+tags: Spark docker
 category: programming
 ---
 
@@ -22,6 +22,7 @@ docker pull apache/zeppelin:0.8.2
 docker run -d --rm \
   -p 8080:8080 \
   -v $PWD/logs:/logs \
+  -v $PWD/data:/data \
   -v $PWD/notebook:/notebook \
   -e ZEPPELIN_ADDR='0.0.0.0' \
   -e ZEPPELIN_NOTEBOOK_DIR='/notebook' \
