@@ -52,12 +52,12 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        
+        <!-- footer ads -->
+        <nav>
+          {% include GoogleAdSenseFooter.html %}
+        </nav>
       </section>
-      
-      <!-- footer ads -->
-      <nav>
-        {% include GoogleAdSenseFooter.html %}
-      </nav>
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
