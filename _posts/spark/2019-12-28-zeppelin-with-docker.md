@@ -3,6 +3,10 @@ title: Install apache zeppelin/spark with Docker
 date: 2019-12-28
 tags: Spark docker
 category: programming
+header:
+  teaser: /assets/img/post/spark/zeppelin_classic_logo.svg
+sidebar:
+    nav: "spark"
 ---
 
 제플린은 주피터와 비슷하게 웹기반의 노트북 스타일 에디터라고 할 수 있습니다. 아파치 재단의 공식 도커 이미지로 제플린을 설치해보겠습니다. 사용할 이미지는 built-in apache spark를 지원합니다. 스파크 사용법을 익히기에 좋습니다.
