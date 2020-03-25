@@ -5,6 +5,22 @@ main:
   - title: "About"
     url: /about/
 
+spark:
+  - title: Env
+    children:
+      - title: Install Spark/Zeppelin with docker
+        url: /programming/zeppelin-with-docker
+  - title: Spark
+    children:
+      - title: Extract - Transfrom - Load
+        url: /programming/dataETL
+      - title: SparkML Tutorial (with NLP)
+        url: /programming/sparkML
+  - title: Hive
+    children:
+      - title: Create Table
+        url: /programming/Hive_Table
+
 airflow: 
   - title: Install
     children: 
