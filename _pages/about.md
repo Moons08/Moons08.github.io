@@ -9,5 +9,8 @@ classes: wide
 toc_ads: false
 ---
 
-- Interests
-  - Learning, Engineering, Automating, Applying
+* 데이터, 머신러닝, 백엔드 엔지니어 사이 어디쯤의 포지션입니다.
+* 새롭게 배우고, 적용하는 것을 좋아합니다.
+* MBTI 성격유형: [ENTP](https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-entp)
+
+---
