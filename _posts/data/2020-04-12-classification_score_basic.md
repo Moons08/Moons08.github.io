@@ -5,9 +5,14 @@ tags: MachineLearning
 category: datascience
 toc: False
 mathjax: true
+header:
+  teaser: /assets/img/post/data/william-warby-WahfNoqbYnM-unsplash.jpg
 ---
 
 어떤 모델, 혹은 방법을 쓰던 분류 문제는 그 의도에 따라 다양한 성능평가 방식을 사용합니다. 사람, 고양이, 개 3개의 클래스를 분류하는 다중 분류(multi label) 예제를 통해 정리해보겠습니다. 여기에서는 가장 기본이 되는 Accuracy, Recall, Precision, F-score와 Fall-out에 대해 정리합니다.
+
+![img](/assets/img/post/data/william-warby-WahfNoqbYnM-unsplash.jpg)
+*Photo by  [William Warby](https://unsplash.com/@wwarby?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/s/photos/measure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 > 분류 문제에서 분류해야되는 각 종류를 클래스라고 합니다. (Class를 Classfication!)  
 > 카테고리, 라벨, 종속변수 등으로도 불립니다.
