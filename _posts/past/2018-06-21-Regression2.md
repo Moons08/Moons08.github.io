@@ -2,7 +2,7 @@
 title: 회귀 분석 - (2) 확률론적 모형
 date: 2018-06-19
 tags: Regression
-category: Data Science
+category: DataScience
 mathjax: true
 ---
 이전에 살펴본 결정론적 모형은 계산한 가중치의 신뢰도를 **부트스트래핑(bootstrapping)** 이라는 방법으로 구해야 한다. 반면, 확률론적 모형에서는 부트스트래핑 없이도 회귀분석 결과의 통계적 특성을 구할 수 있다. 확률론적 선형회귀 모형에서는 데이터가 확률 변수로부터 생성된 표본이라고 가정하기 때문이다.

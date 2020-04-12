@@ -2,7 +2,7 @@
 title: 회귀 분석 - (1) 결정론적 모형
 date: 2018-06-19
 tags: Regression
-category: Data Science
+category: datascience
 mathjax: true
 ---
 14년도 계량 경제학 수업을 들을 때 처음 봤지만, 이제야 조금이나마 알 것 같다. 회귀 분석은 데이터가 어떤 특정한 경향을 보인다는 가정 하에 그 경향성을 찾아 설명하는 것이 목적이다.

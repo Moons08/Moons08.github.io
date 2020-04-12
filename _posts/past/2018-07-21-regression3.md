@@ -2,7 +2,7 @@
 title: 회귀 분석 - (3) Partial Regression
 date: 2018-07-21
 tags: Regression
-category: Data Science
+category: datascience
 mathjax: true
 ---
 partial regression은 각 독립 변수가 종속 변수에 미치는 영향을 파악하는 방법 중 하나다.
