@@ -32,7 +32,7 @@ header:
 
 |실제 \ 예측 | 사람으로 예측 | 고양이로 예측 | 개로 예측 |
 |:--:|:--:|:--:|:--:|
-|사람  |**True** Perseon|False Cat|False Dog|
+|사람  |**True** Person|False Cat|False Dog|
 |고양이|False Person|**True** Cat|False Dog|
 |개   |False Person|False Cat|**True** Dog|
 
@@ -54,7 +54,7 @@ $\text{Accuracy}={\dfrac{\text{정답 클래스 수}}{\text{모든 클래스 수
 
 |실제 \ 예측 | 사람으로 예측 | 고양이로 예측 | 개로 예측 |
 |:--:|:--:|:--:|:--:|
-|사람  |True Perseon|<span style="color:red">False Cat|False Dog|
+|사람  |True Person|<span style="color:red">False Cat|False Dog|
 |고양이|False Person|<span style="color:green">True Cat|False Dog|
 |개   |False Person|<span style="color:red">False Cat|True Dog|
 
@@ -66,7 +66,7 @@ $\text{Precision}_{cat}={\dfrac{\text{고양이라고 예측한 개체 중 실�
 
 |실제 \ 예측 | 사람으로 예측 | 고양이로 예측 | 개로 예측 |
 |:--:|:--:|:--:|:--:|
-|사람  |True Perseon|False Cat|False Dog|
+|사람  |True Person|False Cat|False Dog|
 |고양이|<span style="color:red">False Person</span>|<span style="color:green">True Cat</span>|<span style="color:red">False Dog</span>|
 |개   |False Person|False Cat|True Dog|
 
@@ -83,7 +83,7 @@ $\text{Recall}_{cat}={\dfrac{\text{실제 고양이 중 고양이라고 예측�
 
 |실제 \ 예측 | 사람으로 예측 | 고양이로 예측 | 개로 예측 |
 |:--:|:--:|:--:|:--:|
-|사람  |True Perseon|<span style="color:red">False Cat|False Dog|
+|사람  |True Person|<span style="color:red">False Cat|False Dog|
 |고양이|<span style="color:red">False Person|<span style="color:green">True Cat|<span style="color:red">False Dog|
 |개   |False Person|<span style="color:red">False Cat|True Dog|
 
@@ -112,7 +112,7 @@ print("조화평균: ", (1+b**2) * (pr * rc) / (b**2 * pr + rc))
 
 |실제 \ 예측 | 사람으로 예측 | 고양이로 예측 | 개로 예측 |
 |:--:|:--:|:--:|:--:|
-|사람  |<span style="color:red">True Perseon|<span style="color:green">False Cat|<span style="color:red">False Dog|
+|사람  |<span style="color:red">True Person|<span style="color:green">False Cat|<span style="color:red">False Dog|
 |고양이|False Person|True Cat|False Dog|
 |개   |<span style="color:red">False Person|<span style="color:green">False Cat|<span style="color:red">True Dog|
 
