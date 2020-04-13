@@ -160,7 +160,7 @@ print(classification_report(y_true, y_pred, target_names=target_names))
 # weighted avg       0.66      0.67      0.64        15
 ```
 
-다중 클래스인 경우 클래스마다 평가 점수가 다르게 되는데, scikit-learn은 macro(단순평균)와 weigthed(클래스별 표본 개수로 가중평균) avg로 표현해줍니다.
+다중 클래스인 경우 클래스마다 평가 점수가 다르게 되는데, scikit-learn은 macro(단순평균)와 weighted(클래스별 표본 개수로 가중평균) avg로 표현해줍니다.
 
 ## Outro
 
