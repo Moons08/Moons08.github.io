@@ -6,7 +6,7 @@ category: datascience
 toc: True
 mathjax: true
 header:
-  teaser: /assets/img/post/data/william-warby-WahfNoqbYnM-unsplash.jpg
+  teaser: /assets/img/post/data/markus-spiske-pwpVGQ-A5qI-unsplash.jpg
 sidebar:
     nav: "ds"
 ---
@@ -14,8 +14,8 @@ sidebar:
 이번 포스트에서는 ROC 곡선과 AUC에 대해 정리합니다.  
 [다중분류문제 성능평가 [기본편]](/datascience/classification_score_basic/)에서 이어집니다.
 
-![img](/assets/img/post/data/william-warby-WahfNoqbYnM-unsplash.jpg)
-*Photo by  [William Warby](https://unsplash.com/@wwarby?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/s/photos/measure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+![img](/assets/img/post/data/markus-spiske-pwpVGQ-A5qI-unsplash.jpg)
+Photo by  [Markus Spiske](https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)  on  [Unsplash](https://unsplash.com/s/photos/measure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ## ROC
 
