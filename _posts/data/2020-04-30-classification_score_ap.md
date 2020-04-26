@@ -1,6 +1,6 @@
 ---
 title: 다중 분류 문제 성능평가 [Average Precision]
-date: 2020-04-25
+date: 2020-04-30
 tags: MachineLearning
 category: datascience
 header:
