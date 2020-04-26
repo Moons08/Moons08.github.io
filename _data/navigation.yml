@@ -5,6 +5,14 @@ main:
   - title: "About"
     url: /about/
 
+ds:
+  - title: metric
+    children:
+      - title: 기본편
+      - url: /datascience/classification_score_basic
+      - title: ROC곡선과 AUC
+      - url: /datascience/classification_score_roc_auc
+      
 spark:
   - title: Env
     children:
