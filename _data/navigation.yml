@@ -4,15 +4,9 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
+  - title: "Spark"
+    url: /programming/zeppelin-with-docker/
 
-ds:
-  - title: metric
-    children:
-      - title: 기본편
-      - url: /datascience/classification_score_basic
-      - title: ROC곡선과 AUC
-      - url: /datascience/classification_score_roc_auc
-      
 spark:
   - title: Env
     children:
@@ -61,3 +55,13 @@ CS:
     children:
     - title: Process Management
       url: /CS/
+
+ds:
+  - title: 분류문제 성능평가
+    children:
+    - title: 기본편
+      url: /datascience/classification_score_basic
+    - title: ROC곡선과 AUC
+      url: /datascience/classification_score_roc_auc
+    - title: Average Precision
+      url: /datascience/classification_score_ap

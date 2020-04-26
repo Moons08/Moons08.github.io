@@ -1,5 +1,5 @@
 ---
-title: 다중분류문제 성능평가 [심화편] - ROC 곡선과 AUC
+title: 다중 분류 문제 성능평가 [ROC 곡선과 AUC]
 date: 2020-04-25
 tags: MachineLearning
 category: datascience

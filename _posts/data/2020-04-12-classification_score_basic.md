@@ -1,5 +1,5 @@
 ---
-title: 다중분류문제 성능평가 [기본편]
+title: 다중 분류 문제 성능평가 [기본편]
 date: 2020-04-12
 tags: MachineLearning
 category: datascience
