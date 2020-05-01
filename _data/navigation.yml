@@ -4,7 +4,7 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
-  - title: "Spark"
+  - title: "Spark Tutorial"
     url: /programming/zeppelin-with-docker/
 
 spark:
@@ -14,7 +14,7 @@ spark:
         url: /programming/zeppelin-with-docker
   - title: Spark
     children:
-      - title: Extract - Transfrom - Load
+      - title: Extract - Transform - Load
         url: /programming/dataETL
       - title: SparkML Tutorial (with NLP)
         url: /programming/sparkML
