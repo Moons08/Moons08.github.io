@@ -18,6 +18,10 @@ spark:
         url: /programming/dataETL
       - title: SparkML Tutorial (with NLP)
         url: /programming/sparkML
+      - title: Streaming (Intro)
+        url: /programming/sparkStreaming
+      - title: Streaming (Trigger)
+        url: /programming/streamTrigger
   - title: Hive
     children:
       - title: Create Table
