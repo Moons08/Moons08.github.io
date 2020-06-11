@@ -4,23 +4,27 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
-  - title: "Spark Tutorial"
-    url: /programming/zeppelin-with-docker/
+  - title: "Spark Tips"
+    url: /programming/spark_tip/
 
 spark:
-  - title: Env
+  - title: 들어가기
     children:
-      - title: Install Spark/Zeppelin with docker
+      - title: Little Tips for Spark
+        url: /programming/spark_tip/
+      - title: 제플린/스파크 초간단 설치 (with Docker)
         url: /programming/zeppelin-with-docker
-  - title: Spark
+  - title: 데이터 다루기
     children:
-      - title: Extract - Transform - Load
+      - title: Data ETL
         url: /programming/dataETL
-      - title: SparkML Tutorial (with NLP)
+      - title: SparkML (with NLP)
         url: /programming/sparkML
-      - title: Streaming (Intro)
+  - title: 실시간 데이터 다루기
+    children:
+      - title: Spark Streaming API
         url: /programming/sparkStreaming
-      - title: Streaming (Trigger)
+      - title: Trigger
         url: /programming/streamTrigger
   - title: Hive
     children:
