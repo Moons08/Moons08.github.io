@@ -28,8 +28,8 @@ spark:
         url: /programming/streamTrigger
   - title: Hive
     children:
-      - title: Create Table
-        url: /programming/Hive_Table
+    - title: Table 다루기
+      url: /programming/Hive_Table
 
 airflow: 
   - title: Install
