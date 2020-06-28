@@ -30,6 +30,8 @@ spark:
     children:
     - title: Table 다루기
       url: /programming/Hive_Table
+    - title: Partition 다루기
+      url: /programming/Hive_Partition
 
 airflow: 
   - title: Install
