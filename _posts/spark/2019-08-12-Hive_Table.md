@@ -4,6 +4,8 @@ date: 2020-06-12
 tags: SQL Hadoop Hive Spark
 category: programming
 toc: True
+header:
+  teaser: /assets/img/post/spark/hive/Apache_Hive_logo.png
 sidebar:
     nav: "spark"
 ---
@@ -13,6 +15,56 @@ sidebar:
 > 하이브는 애초에 OLTP가 아닌 하둡의 데이터 웨어하우징용으로 설계되었기 때문에 RDBMS와는 다릅니다. 일단, delete와 update가 불완전합니다. ~~없다고 보시면 됩니다~~
 
 ## 테이블 생성
+
+### 외부 테이블
+
+외부 테이블(External Table)은 이미 하둡에 데이터가 있는 데이터를 기반으로 테이블을 만들기 때문에 스키마만 정해주면 됩니다. 그래서 파일 따로, 스키마 따로 관리하기 좋습니다. *그럴 일이 있어서는 안되겠지만 누군가 테이블을 날려버려도 데이터는 안전합니다!*
+
+#### csv
+
+가장 많이 쓰이는 포맷인 것 같습니다.
+
+```sql
+CREATE EXTERNAL TABLE tb_sample(
+    col1 STRING,
+    col2 INT
+    )
+ROW FORMAT DELIMITED
+        FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+LOCATION '/file/path/some/where';
+```
+
+#### parquet
+
+컬럼 기반 저장 포맷으로, 스키마와 함께 데이터를 압축하여 저장합니다. 압축형태라 Hue에서 내용을 확인할 수 없다는게 단점.
+
+```sql
+CREATE EXTERNAL TABLE tb_sample(
+    col1 STRING,
+    col2 INT
+    )
+STORED AS PARQUET
+LOCATION '/file/path/some/where';
+```
+
+#### json
+
+유연성이 높은 json입니다. 쌓아야할 데이터의 구조가 바뀔 가능성이 있다면 json이 좋습니다.
+
+```sql
+CREATE EXTERNAL TABLE tb_sample(
+    col1 STRING,
+    col2 STRING,
+    col3 STRUCT <
+        s_1:STRING,
+        s_2:INT
+    >
+    )
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+STORED AS TEXTFILE
+LOCATION '/file/path/some/where';
+```
 
 ### 관리형 테이블
 
@@ -31,58 +83,14 @@ CLUSTERED BY(userid) SORTED BY(viewTime) INTO 32 BUCKETS;
 
 > 한글 컬럼명을 쓰신다면 select 할때도 백틱을 꼭 써줘야합니다.
 
-### 외부 테이블
-
-외부 테이블(External Table)은 이미 하둡에 데이터가 있는 데이터를 기반으로 테이블을 만들기 때문에 스키마만 정해주면 됩니다. 그래서 파일 따로, 스키마 따로 관리하기 좋습니다. *그럴 일이 있어서는 안되겠지만 누군가 테이블을 날려버려도 데이터는 안전합니다!*
-
-#### 데이터 소스
-
-* csv: 가장 많이 쓰이는 포맷인 것 같습니다.
-
-```sql
-CREATE EXTERNAL TABLE tb_sample(
-    col1 STRING,
-    col2 INT
-    )
-ROW FORMAT DELIMITED
-        FIELDS TERMINATED BY ','
-STORED AS TEXTFILE
-LOCATION '/file/path/some/where';
-```
-
-* parquet: 컬럼 기반 저장 포맷으로, 스키마와 함께 데이터를 압축하여 저장합니다. 압축형태라 Hue에서 내용을 확인할 수 없다는게 단점..
-
-```sql
-CREATE EXTERNAL TABLE tb_sample(
-    col1 STRING,
-    col2 INT
-    )
-STORED AS PARQUET
-LOCATION '/file/path/some/where';
-```
-
-* json: 유연성이 높은 json입니다. 쌓아야할 데이터의 구조가 바뀔 가능성이 있다면 json이 좋습니다.
-
-```sql
-CREATE EXTERNAL TABLE tb_sample(
-    col1 STRING,
-    col2 STRING,
-    col3 STRUCT <
-        s_1:STRING,
-        s_2:INT
-    >
-    )
-ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
-STORED AS TEXTFILE
-LOCATION '/file/path/some/where';
-```
-
 ### 파티션
 
-위처럼 파티션을 나눠주면 여러모로 관리가 편합니다. [Hive Partition 다루기](/programming/Hive_Partition)
+위처럼 파티션을 나눠주면 여러모로 관리가 편합니다.
 
 * 재작업시 해당 파티션에만 덮어쓰기(`overwrite`)가능
 * where 조건에 포함하여 쿼리 시간&비용 감소
+
+더 자세한 내용은 **[Hive Partition 다루기](/programming/Hive_Partition)**에서!
 
 ### 클러스터
 

@@ -1,11 +1,11 @@
 ---
 title: Hive Partition 다루기
 date: 2020-06-27
-tags: Spark
+tags: Spark Hive Hadoop SQL
 category: programming
 toc: True
 header:
-  teaser: 
+  teaser: /assets/img/post/spark/hive/Apache_Hive_logo.png
 sidebar:
     nav: "spark"
 ---
