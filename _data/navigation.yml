@@ -6,6 +6,8 @@ main:
     url: /about/
   - title: "Spark Tips"
     url: /programming/spark_tip/
+  - title: "Airflow Tips"
+    url: /programming/airflow-with-docker/
 
 spark:
   - title: 들어가기
@@ -59,6 +61,8 @@ airflow:
       url: /programming/airflow-branch
     - title: Subdag 활용
       url: /programming/airflow-subdag
+    - title: XCom 활용
+      url: /programming/airflow-xcom
 
 CS:
   - title: OS
