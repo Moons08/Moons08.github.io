@@ -22,6 +22,8 @@ spark:
         url: /programming/dataETL
       - title: SparkML (with NLP)
         url: /programming/sparkML
+      - title: Spark with JDBC
+        url: /programming/sparkJDBC
   - title: 실시간 데이터 다루기
     children:
       - title: Spark Streaming API
