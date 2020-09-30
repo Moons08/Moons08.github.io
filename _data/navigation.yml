@@ -16,6 +16,8 @@ spark:
         url: /programming/spark_tip/
       - title: 제플린/스파크 초간단 설치 (with Docker)
         url: /programming/zeppelin-with-docker
+      - title: 제플린 단축키
+        url: /programming/zeppelin_shortcuts
   - title: 데이터 다루기
     children:
       - title: Data ETL
