@@ -67,9 +67,10 @@ jdbcDF \
 
 ```scala
 // scala
+props.put("truncate", true) // index를 살리고 싶다면!
+
 spark.sql("SELECT ID, VALUE FROM sparkTemp")
   .write.mode("overwrite")
-  .option("truncate", true)  // default: false
 //   .option("createTableColumnTypes", "ID CHAR(64), VALUE VARCHAR(1024)")
   .jdbc(url, "schema.tablename", props)
 ```
@@ -77,5 +78,5 @@ spark.sql("SELECT ID, VALUE FROM sparkTemp")
 ### 주의
 
 * 오라클 db에 데이터를 쓸 때, 컬럼명을 소문자로 쓰면 `id -> "id"` 이런 식으로 따옴표가 같이 들어가는 경우가 있습니다. 그래서 저는 꼭 **대문자**로 씁니다. (관련하여 이유를 아시는 분이 있다면 말씀해주시면 감사하겠습니다.)
-* ~~`truncate` 옵션 **없이** 덮어쓰기를 할 경우에는 인덱스, 제약조건, 코멘트 등 대상 테이블에 딸린 다양한 것들이 사라집니다. (무결성 깨지는 경우가 생김)~~
-  * truncate 해도 날아가는 경우가 있음.. 확인 필요
+  * `truncate` 옵션 **없이** 덮어쓰기를 할 경우에는 인덱스, 제약조건, 코멘트 등 대상 테이블에 딸린 다양한 것들이 사라집니다. (무결성 깨지는 경우가 생김)
+  * truncate 옵션은 props에 넣어줍시다. `write.option()` 으로는 적용이 안되네요.
