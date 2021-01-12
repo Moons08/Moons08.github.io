@@ -22,6 +22,10 @@ spark:
     children:
       - title: Data ETL
         url: /programming/dataETL
+      - title: Write Parquet with Null
+        url: /programming/parquet_null
+      - title: Read Tricky Text File
+        url: /programming/tricky_csv
       - title: SparkML (with NLP)
         url: /programming/sparkML
       - title: Spark with JDBC
