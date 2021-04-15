@@ -1,7 +1,7 @@
 ---
 title: 도커와 쿠버네티스를 이해하기 위한 로드맵 & 가이드
 date: 2021-02-19
-tags: CS docker kubernetes
+tags: docker kubernetes
 category: programming
 toc: true
 --- 
