@@ -27,7 +27,7 @@ toc: true
 
 도커는 Linux 컨테이너를 만들고 사용할 수 있도록 하는 컨테이너화 기술입니다.
 
-![img](/assets/img/post/docker/docker_run.png)
+![img](/assets/img/post/k8s/docker_run.png)
 *커맨드 한 줄에 리눅스 컨네이너가 뙇.*
 
 도커를 왜 써야하는지 모르거나, 컨테이너에 익숙하지 않으시다면 아래 글을 추천합니다.
