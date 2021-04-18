@@ -1,5 +1,5 @@
 ---
-title: \[Spark] scala build Jar with IntelliJ
+title: spark-submit을 위한 스파크 앱 JAR 생성하기
 date: 2021-04-03
 tags: Spark scala
 category: programming
@@ -8,7 +8,9 @@ sidebar:
     nav: "spark"
 ---
 
-intelliJ를 이용해 scala spark 프로젝트를 fat-jar로 빌드하고, 잘 되었는지 spark-submit로 테스트 해봅니다.
+Build scala Fat-Jar with SBT for spark-submit. SBT와 intelliJ를 이용해 scala spark 프로젝트를 fat-jar로 빌드하고, 잘 되었는지 spark-submit로 테스트 해봅니다.
+
+완성된 코드는 [Github: spark-fatJAR-example](https://github.com/Moons08/spark-fatJAR-example)에서도 보실 수 있습니다.
 
 ## Set project
 
@@ -24,11 +26,10 @@ intelliJ에서 제공하는 plugins도 설치합니다.
 
 ![img](/assets/img/post/spark/buildTest/plugin.png)
 
-이제 세팅된 프로젝트 아래의 파일 네 개만 변경하면 되겠습니다.
+이제 세팅된 프로젝트 아래의 파일 세 개만 변경하면 되겠습니다.
 
 ```sh
 .
-├── READMD.md           # <-- 0 처음에는 없습니다!
 ├── build.sbt           # <-- 1
 ├── project
 │   ├── build.properties
@@ -46,11 +47,6 @@ intelliJ에서 제공하는 plugins도 설치합니다.
 
 ```
 
-### readme.md
-
-요거는 main 파일에서 wordcount 예제로 가져다 쓸 텍스트 파일을 하나 챙겨왔습니다.  
-[readme test 검색어로 나온 가장 상위 readme](https://github.com/aswitalski/readme-to-test)
-
 ### build.sbt
 
 버전, 환경세팅 관련해서 여기에 정의해줍니다.
@@ -58,7 +54,7 @@ intelliJ에서 제공하는 plugins도 설치합니다.
 ```scala
 // build.sbt
 lazy val commonSettings = Seq(
-  name := "sparkBuildTest",
+  name := "spark-fatJAR-example",
   version := "1.0",
   scalaVersion := "2.12.13"
 )
@@ -70,7 +66,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % "3.1.1"
 )
 
-// 다시 빌드할 때 사용 됨
+// 재빌드 시에 사용됨
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
@@ -95,18 +91,18 @@ addSbtPlugin(
 .
 ├── main
 │   └── scala
-│       └── buildTest
+│       └── buildExample
 │           └── helloworld.scala
 └── test
     └── scala
 ```
 
-src/main/scala 아래 buildTest라는 패키지를 만들고 scala object 파일을 만들었습니다.
-*패키지가 없으면 jar로 만들었을 때 클래스를 못 찾더라고요. 이건 더 찾아봐야겠습니다.*
+src/main/scala 아래 buildExample 패키지를 만들고 scala object 파일을 만들었습니다.
+*패키지가 없으면 jar로 만들었을 때 클래스를 못 찾더라고요. 왜 그런지는 더 찾아봐야겠습니다.*
 
 ```scala
 // helloworld.scala
-package buildTest
+package buildExample
 
 import org.apache.spark.sql.SparkSession
 
@@ -114,17 +110,16 @@ object helloworld {
   def main(args: Array[String]): Unit = {
     println("Hello, Spark!")
     val logFile = "README.md" // Should be some file on your system
-    val spark = SparkSession.builder.appName("buildTest helloworld").getOrCreate()
+    val spark = SparkSession.builder.appName("helloWorld").getOrCreate()
     val logData = spark.read.textFile(logFile).cache()
     val numAs = logData.filter(line => line.contains("a")).count()
     val numBs = logData.filter(line => line.contains("b")).count()
     println(s"Lines with a: $numAs, Lines with b: $numBs")
     spark.stop()
   }
-}
 ```
 
-`Hello, Spark!` 프린트를 찍고나서 프로젝트 최상단에 있는 readme 파일에 a, b가 포함된 라인을 세는 간단한 예제입니다.
+`Hello, Spark!` 프린트를 찍고나서 readme 파일의 a, b가 포함된 라인을 세는 간단한 예제입니다.
 
 ### with docker container [cf.]
 
@@ -152,7 +147,7 @@ docker run -it --rm --name scala \
 assemble!
 
 ```sh
-$sbt assembly 
+sbt assembly
 ```
 
 ![img](/assets/img/post/spark/buildTest/sbt_assembly.png)
@@ -169,16 +164,22 @@ $sbt assembly
 
 워커 2대, 마스터 1대로 구성된 컨테이너로 테스트했습니다.
 
-> 이 부분도 따로 정리해보는 것으로 ㅎㅎ. 할 게 많네요.
-
 ```sh
+# deploy spark cluster
+$ docker-compose up -d # yaml 파일은 깃 참조!
+
+# file copy from local to container
+$ docker cp target/scala-2.12/spark-fatJAR-example-assembly-1.0.jar spark-fatjar-example_spark_1:/opt/bitnami/spark/work
+
+# spark-submit (check master IP)
 $ docker-compose exec spark ./bin/spark-submit \
-  --class buildTest.helloworld \
-  --master spark://172.24.0.3:7077 \
+  --class buildExample.helloworld \
+  --master spark://4f20d2739c84:7077 \
   --executor-memory 1G \
   --total-executor-cores 2 \
-  work/sparkBuildTest-assembly-1.0.jar
+  work/spark-fatJAR-example-assembly-1.0.jar
 
+"""
 21/04/04 11:26:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Hello, Spark!
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
@@ -192,9 +193,8 @@ Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 21/04/04 11:26:40 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
 21/04/04 11:26:40 INFO DAGScheduler: Job 1 finished: count at helloworld.scala:12, took 0.345741 s
 Lines with a: 64, Lines with b: 32
-21/04/04 11:26:40 INFO SparkUI: Stopped Spark web UI at http://6be9159a538d:4040
 ...
-...
+"""
 ```
 
 `Hello, Spark!` 를 프린트하고 마지막 부분에 `Lines with a: 64, Lines with b: 32`를 프린트합니다.
@@ -202,6 +202,8 @@ Lines with a: 64, Lines with b: 32
 ## closing
 
 일단은 scala-spark-jar 빌드 글을 이렇게 마무리합니다. 다만, 글을 쓰면서 미처 다루지 못한 부분들이 많이 보여 추가로 글을 쓰게 될 것 같습니다. 스파크에서 돌아가는 jar 파일을 만들어보겠다고 삽질하느라 이해 안하고 넘긴 부분이 꽤나 되서.. sbt 파일도 하나하나 다시 공부하면서 찾아봐야겠습니다. 다른 분들은 일단 여기까지는 쉽게 오시길!
+
+* 2021-04-19: git repo에 코드를 추가했습니다.
 
 ---
 
