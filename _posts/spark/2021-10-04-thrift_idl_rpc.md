@@ -1,5 +1,5 @@
 ---
-title: Spark Thrift server와 IDL, RPC 정리
+title: Spark Thrift Server와 IDL, RPC 정리
 date: 2021-10-04
 tags: Spark RPC Thrift
 category: programming
