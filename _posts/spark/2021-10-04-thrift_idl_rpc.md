@@ -4,6 +4,8 @@ date: 2021-10-04
 tags: Spark RPC Thrift
 category: programming
 toc: True
+sidebar:
+    nav: "spark"
 ---
 
 Spark는 Thrift server를 지원합니다. 그런데 Thrift가 뭔가요?

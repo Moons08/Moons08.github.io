@@ -44,6 +44,8 @@ spark:
       url: /programming/Hive_Table
     - title: Partition 다루기
       url: /programming/Hive_Partition
+    - title: Spark Thrift Server
+      url: /programming/thrift_idl_rpc
 
 airflow: 
   - title: Install
