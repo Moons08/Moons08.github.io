@@ -17,6 +17,6 @@ MBTI 성격유형: [ENTP](https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%
 
 ## 회고글
 
-[2019년 회고](/blog/2019_closing)  
-[2020년 상반기 회고](/blog/2020_FH_closing)
-[2020년 회고](/blog/2020_closing)
+* [2019년 회고](/blog/2019_closing)
+* [2020년 상반기 회고](/blog/2020_FH_closing)
+* [2020년 회고](/blog/2020_closing)
