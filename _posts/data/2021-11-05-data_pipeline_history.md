@@ -46,7 +46,9 @@ DB는 굉장히 비싼 자원이기 때문에 분석을 빠르게, 많이 하고
 
 그래서 이제 저장소라는 Lake에 Raw(원시) 데이터부터 가공한 데이터까지 모두 넣어놓고 찾아볼 수 있게합니다. (Lake 내에서 원시 데이터는 Raw, 가공 데이터는 Mart 등으로 구분을 위해서 나누어 놓기는 합니다.) 이 단계의 저장소는 대부분 Apache Hadoop 프레임워크의 [HDFS(하둡 분산 파일 시스템)](https://ko.wikipedia.org/wiki/아파치_하둡)를 사용합니다.
 
-> Data Lake의 managed service로는 클라우드 서비스인 AWS의 S3, GCP의 Cloud Storage가 있는데, HDFS와 유사하게 사용할 수 있습니다. (애초에 HDFS가 Google File System(GFS)을 대체하기 위해 만들어졌답니다.)
+> Data Lake의 managed service로는 클라우드 서비스인 AWS의 S3, GCP의 Cloud Storage가 있는데, HDFS와 유사하게 사용할 수 있습니다. (애초에 HDFS가 Google File System(GFS)을 대체하기 위해 만들어졌답니다.)  
+> 저장소를 S3, GCS로 두고 컴퓨팅은 Athena와 Bigquery 같이 쓴 만큼 지불하는 도구를 쓰거나, EMR이나 Dataproc 같은 Managed cluster를 띄워놓고 사용할 수도 있습니다.  
+> 혹은 snowflake나 databricks의 제품을 사용해서 멀티 클라우드 환경에서 운용할 수도 있고, 추가된 편의 기능을 사용할 수도 있을 겁니다. 갈수록 좋아지고 있어요!
 
 ### Pipeline
 
