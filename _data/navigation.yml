@@ -20,6 +20,8 @@ spark:
         url: /programming/zeppelin_shortcuts
       - title: 스파크 앱 빌드하기
         url: /programming/scala_build
+      - title: 스파크 클러스터 아키텍처와 앱 라이프 사이클
+        url: /programming/sparkcluster
   - title: 데이터 다루기
     children:
       - title: Data ETL
