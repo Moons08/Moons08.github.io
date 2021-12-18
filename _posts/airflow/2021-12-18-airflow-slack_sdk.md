@@ -11,7 +11,7 @@ sidebar:
 Airflow 버전에 따라서 의존성 때문에 slack operator 쓰기가 영 불편합니다. 그래서 python slack sdk로 slack operator를 대체하는 방법에 대해 정리해봅니다.
 
 > Q. 왜 Airflow가 지원하는 Operator를 쓰지 않나요?  
-> A. 언제 지원이 끊길지 모르고, 버전별로 호환이 될지 모르기 떄문입니다. sdk를 사용하면 의존성 단계를 한단계 줄일 수 있습니다. (slack과 나 사이의 Airflow 의존성을 제거)
+> A. 언제 지원이 끊길지 모르고, 버전별로 호환이 될지 모르기 때문입니다. sdk를 사용하면 의존성 단계를 한단계 줄일 수 있습니다. (slack과 나 사이의 Airflow 의존성을 제거)
 
 [python-slack-sdk github](https://github.com/slackapi/python-slack-sdk/tree/main/tutorial)를 참조하시면 더 자세한 튜토리얼을 확인할 수 있습니다.
 
