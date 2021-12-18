@@ -9,6 +9,13 @@ sidebar:
 
 작업 상황, 결과 등을 슬랙으로 전달하는 데 이용할 수 있는 Operator 입니다. (Mattermost도 됩니다.)
 
+## 의존성 알림
+
+> 본문의 예시 코드는 Airflow 버전에 따라 의도대로 동작하지 않을 수 있습니다. (`SlackAPIPostOperator` 클래스가 deprecate 되었습니다.)  
+> [Slack sdk로 메세지 보내기 with Airflow](/programming/airflow-slack_sdk) 글을 참조하시면 최신 버전 (2.0 이상) 에서도 동작하는 예시 코드를 확인하실 수 있습니다.
+
+## 본문
+
 슬랙 토큰은 [여기](https://api.slack.com/custom-integrations/legacy-tokens)에서 생성하시면 됩니다. 슬랙 알림을 사용할 workspace를 선택해주세요.
 
 예제를 실행하기 전 다음 명령어를 cmd 창에서 실행해 주세요.
@@ -219,3 +226,8 @@ vars(context.get('task_instance'))
 ---
 
 여기에서는 간단한 메세지를 보내는 기능이지만, 슬랙 API를 활용하면 더 많은 것들을 할 수 있을 겁니다.
+
+## 의존성 알림
+
+> 본문의 예시 코드는 Airflow 버전에 따라 의도대로 동작하지 않을 수 있습니다. (`SlackAPIPostOperator` 클래스가 deprecate 되었습니다.)  
+> [Slack sdk로 메세지 보내기 with Airflow](/programming/airflow-slack_sdk) 글을 참조하시면 최신 버전 (2.0 이상) 에서도 동작하는 예시 코드를 확인하실 수 있습니다.

@@ -68,7 +68,7 @@ airflow:
   - title: apply
     children:
     - title: 슬랙 메시지 보내기
-      url: /programming/airflow-slack
+      url: /programming/airflow-slack_sdk
     - title: Jinja Template 활용
       url: /programming/airflow-jinja
     - title: Branch 분기 나누기
