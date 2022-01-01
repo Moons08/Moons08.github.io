@@ -6,8 +6,16 @@ main:
     url: /about/
   - title: "Spark Tips"
     url: /programming/spark_tip/
-  - title: "Airflow Tips"
-    url: /programming/airflow-with-docker/
+
+blog:
+  - title: Closing
+    children:
+      - title: 2019
+        url: /blog/2019_closing/
+      - title: 2020
+        url: /blog/2020_closing/
+      - title: 2021
+        url: /blog/2021_closing/
 
 spark:
   - title: 들어가기
