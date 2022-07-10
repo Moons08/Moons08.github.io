@@ -16,6 +16,8 @@ blog:
         url: /blog/2020_closing/
       - title: 2021
         url: /blog/2021_closing/
+      - title: 2022 - FH
+        url: /blog/2022_FH_closing/
 
 spark:
   - title: 들어가기

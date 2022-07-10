@@ -19,3 +19,4 @@ toc_ads: false
 * 2019년: [회고](/blog/2019_closing)
 * 2020년: [상반기 회고](/blog/2020_FH_closing) / [연말 회고](/blog/2020_closing)
 * 2021년: [회고](/blog/2021_closing)
+* 2022년: [상반기 회고](/blog/2022_FH_closing)
