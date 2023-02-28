@@ -14,7 +14,7 @@ sidebar:
 도커 설치가 미리 되어있어야 합니다. 준비가 되었다면, 이미지를 받아옵니다.
 
 ```sh
-docker pull apache/zeppelin:0.8.2
+docker pull apache/zeppelin:0.10.0
 # 작성일 기준 최신버전, latest 태그가 없어서 버전 명시가 필요합니다.
 ```
 
@@ -31,8 +31,9 @@ docker run -d --rm \
   -e ZEPPELIN_ADDR='0.0.0.0' \
   -e ZEPPELIN_NOTEBOOK_DIR='/notebook' \
   -e ZEPPELIN_LOG_DIR='/logs' \
-  --name zeppelin apache/zeppelin:0.8.2
+  --name zeppelin apache/zeppelin:0.10.0
 ```
+docker pull 안했다면 run 했을 때 이미지 없다고 하고 받아옵니다.
 
 위 명령어로 컨테이너를 생성하고 몇 초 ~ 분 후에 `localhost:8080` 경로에서 제플린이 실행되는 것을 확인할 수 있습니다.
 
