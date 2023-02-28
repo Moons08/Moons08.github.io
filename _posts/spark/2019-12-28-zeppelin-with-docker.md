@@ -1,6 +1,7 @@
 ---
 title: 제플린/스파크 도커로 설치하기
 date: 2019-12-28
+last_modified_at: 2023-02-28
 tags: Spark docker
 category: programming
 header:
