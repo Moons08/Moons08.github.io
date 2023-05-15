@@ -17,17 +17,17 @@ Spark bucketing의 특징과 잘 쓰기 위한 방법에 대해 정리합니다.
 Bucketed Table을 만들 때는 Aggregation이나 Filter에 주요하게 사용될 컬럼을 Bucket Key로 설정하는 것이 중요합니다. 
 
 ```
-tableA.groupBy(‘user_id’).agg(count(‘*’))  
+tableA.groupBy('user_id').agg(count('*'))  
 # 이 코드는 부분적으로 셔플이 발생합니다.
 
-tableA.withColumn(’n’, count(‘*’).over(Window().partitionBy(‘user_id’)))
+tableA.withColumn('n', count('*').over(Window().partitionBy('user_id')))
 # 이 코드는 전체 셔플이 발생합니다.
 ```
 
 그런데 만약 tableA가 user_id로 버케팅 되어있다면 셔플이 전혀 발생하지 않습니다.
 
 ```
-spark.table(‘tableA’).filter(col(‘user_id’) == 123)
+spark.table('tableA').filter(col('user_id') == 123)
 # 이 코드는 tableA 의 모든 data file을 읽습니다. 
 ```
 만약 버케팅 되어 있다면 저 레코드가 위치한 파일만 읽습니다. 
