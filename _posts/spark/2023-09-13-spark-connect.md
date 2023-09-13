@@ -53,12 +53,12 @@ Spark Connect는 여러 멀티테넌트 운영 이슈를 완화합니다.
   * (제 생각) 디버깅할 때 문법적 오류가 있다면 Driver까지 제출되기 전에 Client에서 걸러낼 것이라서, 서버 부하도 낮추고 응답 속도도 빠르겠네요.
 * 대부분의 사용자는 Client interface에 상관없이 client library를 사용하게 될 것이며, client library는 interface를 래핑하고 사용자에게 Spark DataFrame API 형태로 쓸 수 있도록 높은 수준의 추상화를 제공합니다.
   * end user - client library - client interface 
-  * (제 생각) 사용자는 remote 서버에 연결하는 부분만 달라지고, DataFrame API를 통해 대부분의 작업을 할 수 있겠습니다. 다만 RDD는 아직 지원하지 않아서... 웬만하면 DataFrame으로 쓰는게 좋겠습니다.
+  * (제 생각) 사용자는 remote 서버에 연결하는 부분만 달라지고, DataFrame API를 통해 대부분의 작업을 할 수 있겠습니다.
     * ```python
       spark = SparkSession.builder.remote("sc://localhost:15002").getOrCreate() # 이런 식으로 remote 연결
       ```
 
-### Execution Flow Example
+## Execution Flow Example
 ![Execution Flow Example](https://lh3.googleusercontent.com/x-q3naWgXe4YIZQXSm5FO43JbfWSYCQ8xlla4ycIblSrtegHSo1c51fM-k76Jbe0uYJUojCFNy7dXpQYtUc9-Kk6fhh6Wlmgb1KYpH9LYZT_vjWUhge5SjBYGTzo1a_DrBnXVCZ_oHEfb55pWVuyGw)
 
 Spark Connect Session에서 `collect()` method를 실행하면(7) 논리 계획을 proto로 변환하고(8,9), 
