@@ -10,7 +10,7 @@ header:
 
 Spark 3.4 버전에서 Spark Connect가 추가되었습니다. 
 간단히 정리하자면 Spark Connect는 기존 방식에서는 합쳐져 있던 Spark Driver와 Client의 역할을 명시적으로 분리해서 
-여러 사용자가 Spark Cluster를 공유할 때 발생하는 문제(멀티 테넌트 문제)를 완화합니다. 
+여러 사용자가 Spark Cluster를 공유할 때 발생하는 문제(멀티 테넌트 문제)를 완화합니다. (Spark Thrift Server를 쓸 때 이 문제 때문에 고생을 좀 했는데, 해결이 될 수도 있겠어요)
 
 Spark Connect에 대해 알아보며 정리한 내용을 공유합니다.
 
