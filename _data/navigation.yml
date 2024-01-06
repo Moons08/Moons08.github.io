@@ -18,6 +18,8 @@ blog:
         url: /blog/2021_closing/
       - title: 2022
         url: /blog/2022_closing/
+      - title: 2023
+        url: /blog/2023_closing/
 
 spark:
   - title: 들어가기
